@@ -67,6 +67,9 @@ def probe_compile_opt_args(workdir: str) -> list[str]:
     try:
         env = os.environ.copy()
         env["PYTHONPATH"] = workdir
+        env["TORCH_DEVICE_BACKEND_AUTOLOAD"] = "0"
+        env.pop("MASTER_ADDR", None)
+        env.pop("MASTER_PORT", None)
         res = subprocess.run([sys.executable, "-c", code], env=env, capture_output=True, text=True, timeout=25)
         if res.returncode == 0 and res.stdout.strip():
             return res.stdout.strip().split()
@@ -96,14 +99,14 @@ def write_summary_files(out_dir: Path, summary: dict) -> None:
     out_dir.mkdir(parents=True, exist_ok=True)
     (out_dir / "summary.json").write_text(json.dumps(summary, indent=2))
     lines = [
-        "# Wan2.1-T2V-14B (`14.28B` 3D Video DiT) — TorchTitan + TorchTPU `v5p-16` Results",
+        f"# Wan2.1-T2V-14B (`14.28B` 3D Video DiT) — TorchTitan + TorchTPU `{summary['accel']}-16` Results",
         "",
         f"- **Updated (UTC):** `{summary['updated_utc']}`",
-        f"- **Cluster / Nodepool:** `{summary['nodepool']}` (`{summary['topology']}`, `{summary['num_chips']}` TPU `{summary['accel']}` chips)",
+        f"- **Cluster / Nodepool:** `{summary['nodepool']}` (`{summary['topology']}`, `{summary['num_chips']}` TPU `{summary['accel']}` ranks)",
         f"- **Model:** `Wan-AI/Wan2.1-T2V-14B-Diffusers` (`14,284,487,808` params, `1,095` keys across 12 safetensors shards)",
         "- **Reference Baseline (`AI-Hypercomputer/tpu-recipes` JAX MaxDiffusion `v5p-16` `81x480x832`):** `~20.13s/step` (`bsz=8` global = `0.5` videos/chip)",
         "",
-        "| # | Experiment | Parallelism | AC Policy | `sa_block` | Quantization | Seq `S` | GradAccum | Steady Step (s) | Videos/s (Cluster) | Tok/s/chip | Peak HBM (GiB) | MFU (%) | Loss (`step 1 -> N`) | Status |",
+        "| # | Experiment | Parallelism | AC Policy | `sa_block` | Quantization | Seq `S` | GradAccum | Steady Step (s) | Videos/s (Cluster) | Tok/s/rank | Peak HBM (GiB) | MFU (%) | Loss (`step 1 -> N`) | Status |",
         "|---:|---|---|---|---:|---|---:|---:|---:|---:|---:|---:|---:|---|---|",
     ]
     for idx, exp in enumerate(summary["experiments"], 1):
@@ -143,19 +146,13 @@ def main() -> None:
     peak_tflops = PEAK_BF16_TFLOPS_PER_CHIP[args.accel]
 
     workdir = Path("/torchtitan-native")
-    shutil.copy2(Path("/scripts/wan2_1_torchtitan.py"), workdir / "wan2_1_torchtitan.py")
+    dst_mod = workdir / "wan2_1_torchtitan.py"
+    shutil.copy2(Path("/scripts/wan2_1_torchtitan.py"), dst_mod)
 
-    chk_env = os.environ.copy()
-    chk_env["PYTHONPATH"] = str(workdir)
-    chk = subprocess.run(
-        [sys.executable, "-c", "import wan2_1_torchtitan; print('IMPORT_OK', wan2_1_torchtitan.__file__)"],
-        env=chk_env,
-        capture_output=True,
-        text=True,
-    )
-    print(f"[rank={node_rank}] Preflight import: rc={chk.returncode} out={chk.stdout.strip()} err={chk.stderr[-300:]}", flush=True)
-    if chk.returncode != 0:
-        sys.exit(chk.returncode)
+    import py_compile
+
+    py_compile.compile(str(dst_mod), doraise=True)
+    print(f"[rank={node_rank}] Preflight syntax OK: {dst_mod}", flush=True)
 
     wait_for_master_dns(master_addr)
 
@@ -334,11 +331,11 @@ def main() -> None:
             "torchrun",
             f"--nnodes={args.nnodes}",
             f"--nproc_per_node={args.nproc_per_node}",
-            f"--node_rank={node_rank}",
-            f"--rdzv_backend=c10d",
+            "--rdzv_backend=static",
             f"--rdzv_endpoint={master_addr}:{port}",
-            f"--rdzv_id=wan21_{exp_idx}_{port}",
-            "wan2_1_torchtitan.py",
+            f"--node_rank={node_rank}",
+            "-m",
+            "wan2_1_torchtitan",
             "--module=wan2_1_torchtitan",
             "--config=wan2_1_14b_tpu",
             f"--hf_checkpoint_dir={args.checkpoint_dir}",
@@ -350,6 +347,7 @@ def main() -> None:
             f"--parallelism.data_parallel_replicate_degree={exp['dp_rep']}",
             f"--parallelism.data_parallel_shard_degree={exp['dp_shard']}",
             f"--sa_block={exp['sa_block']}",
+            "--debug.seed=42",
         ]
         cmd.append("--save_splash_in_ac" if exp["save_splash"] else "--no-save_splash_in_ac")
         cmd.append("--use_fp8_linear" if exp["use_fp8"] else "--no-use_fp8_linear")
@@ -358,6 +356,8 @@ def main() -> None:
             cmd.extend(compiled_opt_flags)
 
         env = os.environ.copy()
+        env.pop("MASTER_ADDR", None)
+        env.pop("MASTER_PORT", None)
         env["PYTHONPATH"] = str(workdir)
         env["LIBTPU_INIT_ARGS"] = exp["xla_flags"]
         env["PJRT_DEVICE"] = "TPU"

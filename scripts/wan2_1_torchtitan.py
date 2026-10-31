@@ -1009,6 +1009,9 @@ def start_wan21_trainer(config: Wan21Trainer.Config) -> None:
     profiler_workaround.init(config)
     workarounds.use_cpu_safe_histc_patch()
 
+    if config.debug.seed is None:
+        config.debug.seed = 42
+
     if torch.distributed.is_initialized():
         torch.distributed.barrier()
 
