@@ -1,0 +1,123 @@
+{
+  "run_timestamp": "20261031_052942",
+  "updated_utc": "2026-10-31T05:39:04.359246+00:00",
+  "accel": "v5p",
+  "topology": "2x2x4",
+  "nodepool": "tpu-v5p-16-pool",
+  "num_chips": 16,
+  "peak_bf16_tflops_per_chip": 459.0,
+  "checkpoint_dir": "/models/models/Wan-AI/Wan2.1-T2V-14B-Diffusers/transformer",
+  "experiments": [
+    {
+      "name": "wan21_p1_01_fsdp16_fullac_s32k_81x480x832_pretrained",
+      "parallelism": "FSDP-16",
+      "dp_rep": 1,
+      "dp_shard": -1,
+      "ac_mode": "FullAC (recompute attn)",
+      "save_splash": false,
+      "sa_block": 512,
+      "quant": "BF16 (FP32 Reduce)",
+      "use_fp8": false,
+      "seq_len": 32768,
+      "mb_tokens": 32768,
+      "grad_accum": 1,
+      "reduce_dtype": "float32",
+      "steps": 8,
+      "load_pretrained": true,
+      "xla_flags": "",
+      "use_compiled_opt": true,
+      "status": "ok",
+      "wall_s": 561.7,
+      "steady_step_s": 33.82,
+      "steady_tps_per_chip": 969.0,
+      "cluster_tps": 15504.0,
+      "peak_mem_gib": 25.77,
+      "exact_bidir_tflops_per_chip": 162.3,
+      "exact_bidir_mfu_pct": 35.36,
+      "loss_first": 2.0717,
+      "loss_last": 2.00945,
+      "steps_recorded": [
+        {
+          "step": 1,
+          "loss": 2.0717,
+          "grad_norm": 66.8855,
+          "mem_gib": 25.77,
+          "tps": 110.0,
+          "tflops": 18.46,
+          "mfu_pct": 4.02,
+          "step_s": 297.43
+        },
+        {
+          "step": 2,
+          "loss": 3.49238,
+          "grad_norm": 239.7794,
+          "mem_gib": 25.77,
+          "tps": 872.0,
+          "tflops": 146.06,
+          "mfu_pct": 31.82,
+          "step_s": 37.58
+        },
+        {
+          "step": 3,
+          "loss": 2.38138,
+          "grad_norm": 70.5455,
+          "mem_gib": 25.77,
+          "tps": 968.0,
+          "tflops": 162.23,
+          "mfu_pct": 35.34,
+          "step_s": 33.84
+        },
+        {
+          "step": 4,
+          "loss": 2.0589,
+          "grad_norm": 22.9919,
+          "mem_gib": 25.77,
+          "tps": 969.0,
+          "tflops": 162.27,
+          "mfu_pct": 35.35,
+          "step_s": 33.83
+        },
+        {
+          "step": 5,
+          "loss": 2.00134,
+          "grad_norm": 7.0784,
+          "mem_gib": 25.77,
+          "tps": 969.0,
+          "tflops": 162.25,
+          "mfu_pct": 35.35,
+          "step_s": 33.83
+        },
+        {
+          "step": 6,
+          "loss": 2.01985,
+          "grad_norm": 15.451,
+          "mem_gib": 25.77,
+          "tps": 969.0,
+          "tflops": 162.29,
+          "mfu_pct": 35.36,
+          "step_s": 33.82
+        },
+        {
+          "step": 7,
+          "loss": 2.02514,
+          "grad_norm": 16.7557,
+          "mem_gib": 25.77,
+          "tps": 969.0,
+          "tflops": 162.34,
+          "mfu_pct": 35.37,
+          "step_s": 33.81
+        },
+        {
+          "step": 8,
+          "loss": 2.00945,
+          "grad_norm": 12.3165,
+          "mem_gib": 25.77,
+          "tps": 969.0,
+          "tflops": 162.35,
+          "mfu_pct": 35.37,
+          "step_s": 33.81
+        }
+      ]
+    }
+  ]
+}
