@@ -904,12 +904,13 @@ class Wan21Trainer(Trainer):
             batch = next(data_iterator)
             mb_loss = self.forward_backward_step(input_dict=batch, loss_scale=loss_scale)
             accum_loss = accum_loss + mb_loss.detach().float()
-            if ga_steps > 1 and mb_idx + 1 < ga_steps:
-                torch.tpu.synchronize()
+            torch.tpu.synchronize()
 
         grad_norm = self._clip_grad_norm()
         self.checkpointer.maybe_wait_for_staging()
+        torch.tpu.synchronize()
         self.optimizers.step()
+        torch.tpu.synchronize()
         self.lr_schedulers.step()
 
         if not self.metrics_processor.should_log(self.step):
