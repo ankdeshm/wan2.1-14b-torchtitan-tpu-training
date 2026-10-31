@@ -471,7 +471,7 @@ class Wan21Model(BaseModel):
         l_txt: int = 512
         eps: float = 1e-6
 
-        def update_from_config(self, *, trainer_config, **kwargs) -> None:
+        def update_from_config(self, *, config, **kwargs) -> None:
             pass
 
         def get_nparams_and_flops(self, model: nn.Module, seq_len: int) -> tuple[int, int]:
