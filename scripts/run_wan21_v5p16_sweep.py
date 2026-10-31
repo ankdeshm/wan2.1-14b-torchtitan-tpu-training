@@ -417,7 +417,7 @@ def main() -> None:
             summary["experiments"].append(rec)
             summary["updated_utc"] = dt.datetime.now(dt.timezone.utc).isoformat()
             write_summary_files(out_dir, summary)
-        time.sleep(5.0)
+        time.sleep(8.0)
 
     print(f"[rank={node_rank}] ALL {len(experiments)} WAN2.1-14B EXPERIMENTS COMPLETE!", flush=True)
 
