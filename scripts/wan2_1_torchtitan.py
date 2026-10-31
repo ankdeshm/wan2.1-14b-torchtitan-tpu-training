@@ -279,7 +279,7 @@ class WanSelfAttention(Module):
         # Across-heads RMSNorm(5120, eps=1e-6) — matches `[5120]` safetensors shape!
         self.norm_q = RMSNorm.Config(normalized_shape=inner, eps=config.eps).build()
         self.norm_k = RMSNorm.Config(normalized_shape=inner, eps=config.eps).build()
-        self.inner_attention = ScaledDotProductInnerAttention.Config(is_causal=False).build()
+        self.inner_attention = ScaledDotProductInnerAttention.Config().build()
         self.to_out = ModuleList([Linear.Config(in_features=inner, out_features=config.dim, bias=True).build()])
 
     def forward(self, hidden_states: Tensor, rotary_cs: tuple[Tensor, Tensor]) -> Tensor:
@@ -289,7 +289,7 @@ class WanSelfAttention(Module):
         v = self.to_v(hidden_states).view(bsz, seqlen, self.heads, self.head_dim)
         q = _apply_wan_rope_3d(q, rotary_cs)
         k = _apply_wan_rope_3d(k, rotary_cs)
-        out = self.inner_attention(q, k, v)
+        out = self.inner_attention(q, k, v, is_causal=False)
         out = out.reshape(bsz, seqlen, self.heads * self.head_dim)
         return self.to_out[0](out)
 
