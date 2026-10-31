@@ -1,6 +1,6 @@
 {
   "run_timestamp": "20261031_052942",
-  "updated_utc": "2026-10-31T05:39:04.359246+00:00",
+  "updated_utc": "2026-10-31T05:45:29.623288+00:00",
   "accel": "v5p",
   "topology": "2x2x4",
   "nodepool": "tpu-v5p-16-pool",
@@ -116,6 +116,137 @@
           "tflops": 162.35,
           "mfu_pct": 35.37,
           "step_s": 33.81
+        }
+      ]
+    },
+    {
+      "name": "wan21_p1_02_fsdp16_splash_save_ac_s32k_81x480x832_pretrained",
+      "parallelism": "FSDP-16",
+      "dp_rep": 1,
+      "dp_shard": -1,
+      "ac_mode": "SplashSaveAC (28/40 blocks saved)",
+      "save_splash": true,
+      "sa_block": 512,
+      "quant": "BF16 (FP32 Reduce)",
+      "use_fp8": false,
+      "seq_len": 32768,
+      "mb_tokens": 32768,
+      "grad_accum": 1,
+      "reduce_dtype": "float32",
+      "steps": 10,
+      "load_pretrained": true,
+      "xla_flags": "",
+      "use_compiled_opt": true,
+      "status": "ok",
+      "wall_s": 376.73,
+      "steady_step_s": 31.7471,
+      "steady_tps_per_chip": 1032.29,
+      "cluster_tps": 16516.6,
+      "peak_mem_gib": 31.51,
+      "exact_bidir_tflops_per_chip": 172.9,
+      "exact_bidir_mfu_pct": 37.67,
+      "loss_first": 2.0717,
+      "loss_last": 1.99468,
+      "steps_recorded": [
+        {
+          "step": 1,
+          "loss": 2.0717,
+          "grad_norm": 66.8855,
+          "mem_gib": 31.51,
+          "tps": 475.0,
+          "tflops": 79.63,
+          "mfu_pct": 17.35,
+          "step_s": 68.93
+        },
+        {
+          "step": 2,
+          "loss": 3.49226,
+          "grad_norm": 239.7661,
+          "mem_gib": 31.51,
+          "tps": 1030.0,
+          "tflops": 172.47,
+          "mfu_pct": 37.58,
+          "step_s": 31.83
+        },
+        {
+          "step": 3,
+          "loss": 2.38139,
+          "grad_norm": 70.5464,
+          "mem_gib": 31.51,
+          "tps": 1030.0,
+          "tflops": 172.56,
+          "mfu_pct": 37.59,
+          "step_s": 31.81
+        },
+        {
+          "step": 4,
+          "loss": 2.05889,
+          "grad_norm": 22.9909,
+          "mem_gib": 31.51,
+          "tps": 1032.0,
+          "tflops": 172.89,
+          "mfu_pct": 37.67,
+          "step_s": 31.75
+        },
+        {
+          "step": 5,
+          "loss": 2.00134,
+          "grad_norm": 7.0787,
+          "mem_gib": 31.51,
+          "tps": 1032.0,
+          "tflops": 172.84,
+          "mfu_pct": 37.66,
+          "step_s": 31.76
+        },
+        {
+          "step": 6,
+          "loss": 2.01983,
+          "grad_norm": 15.4443,
+          "mem_gib": 31.51,
+          "tps": 1033.0,
+          "tflops": 173.01,
+          "mfu_pct": 37.69,
+          "step_s": 31.73
+        },
+        {
+          "step": 7,
+          "loss": 2.02513,
+          "grad_norm": 16.7521,
+          "mem_gib": 31.51,
+          "tps": 1031.0,
+          "tflops": 172.69,
+          "mfu_pct": 37.62,
+          "step_s": 31.79
+        },
+        {
+          "step": 8,
+          "loss": 2.00943,
+          "grad_norm": 12.3096,
+          "mem_gib": 31.51,
+          "tps": 1032.0,
+          "tflops": 172.92,
+          "mfu_pct": 37.67,
+          "step_s": 31.74
+        },
+        {
+          "step": 9,
+          "loss": 2.0023,
+          "grad_norm": 7.6671,
+          "mem_gib": 31.51,
+          "tps": 1033.0,
+          "tflops": 172.97,
+          "mfu_pct": 37.68,
+          "step_s": 31.74
+        },
+        {
+          "step": 10,
+          "loss": 1.99468,
+          "grad_norm": 4.0302,
+          "mem_gib": 31.51,
+          "tps": 1033.0,
+          "tflops": 173.06,
+          "mfu_pct": 37.7,
+          "step_s": 31.72
         }
       ]
     }
