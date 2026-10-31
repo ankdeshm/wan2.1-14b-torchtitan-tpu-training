@@ -599,19 +599,27 @@ def parallelize_wan21(
     logger.info(f"Patched 40 WanTransformerBlocks.attn1 with bidirectional SplashAttention(sa_block={sa_block})")
 
     if ac_config is not None and getattr(ac_config, "mode", "full") != "none":
-        ctx_fn = (
-            (lambda: create_selective_checkpoint_contexts(_full_ac_save_splash_policy))
-            if save_splash_in_ac
-            else None
-        )
+        dp_total = max(1, parallel_dims.dp_replicate * parallel_dims.dp_shard)
+        if save_splash_in_ac:
+            if training.max_context_length >= 32768 and dp_total <= 16:
+                first_full_ac = 12  # Save SplashAttention on last 28/40 blocks (~35 GiB saved, >35 GiB free on 95 GiB v5p)
+            else:
+                first_full_ac = 0  # Save SplashAttention on all 40/40 blocks
+        else:
+            first_full_ac = 40
+        splash_ctx_fn = lambda: create_selective_checkpoint_contexts(_full_ac_save_splash_policy)
         for layer_id, blk in model.blocks.named_children():
+            use_save = save_splash_in_ac and int(layer_id) >= first_full_ac
             wrapped = (
-                ptd_checkpoint_wrapper(blk, preserve_rng_state=False, context_fn=ctx_fn)
-                if ctx_fn is not None
+                ptd_checkpoint_wrapper(blk, preserve_rng_state=False, context_fn=splash_ctx_fn)
+                if use_save
                 else ptd_checkpoint_wrapper(blk, preserve_rng_state=False)
             )
             model.blocks.register_module(layer_id, wrapped)
-        logger.info(f"Applied Activation Checkpointing (save_splash_in_ac={save_splash_in_ac}) to 40 blocks")
+        logger.info(
+            f"Applied Activation Checkpointing (save_splash_in_ac={save_splash_in_ac}, "
+            f"saved_blocks={40 - first_full_ac}/40) to 40 blocks"
+        )
 
     if compile_config.enable and "model" in compile_config.components:
         for blk in model.blocks:
