@@ -1,0 +1,85 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: wan21-v5p-16-pass1-svc
+  namespace: default
+spec:
+  clusterIP: None
+  publishNotReadyAddresses: true
+  selector:
+    job-name: wan21-v5p-16-pass1
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: wan21-v5p-16-pass1
+  namespace: default
+spec:
+  completions: 4
+  parallelism: 4
+  completionMode: Indexed
+  backoffLimit: 20
+  template:
+    metadata:
+      labels:
+        app: wan21-v5p-16-pass1
+      annotations:
+        gke-gcsfuse/volumes: "true"
+        cluster-autoscaler.kubernetes.io/safe-to-evict: "false"
+    spec:
+      serviceAccountName: default
+      subdomain: wan21-v5p-16-pass1-svc
+      restartPolicy: OnFailure
+      nodeSelector:
+        cloud.google.com/gke-nodepool: tpu-v5p-16-pool
+        cloud.google.com/gke-tpu-accelerator: tpu-v5p-slice
+        cloud.google.com/gke-tpu-topology: 2x2x4
+      tolerations:
+      - key: "google.com/tpu"
+        operator: "Exists"
+        effect: "NoSchedule"
+      - key: "cloud.google.com/gke-spot"
+        operator: "Exists"
+        effect: "NoSchedule"
+      containers:
+      - name: trainer
+        image: us-central1-docker.pkg.dev/YOUR_GCP_PROJECT_ID/torchtpu/torchtitan-flint:v0.2.0
+        imagePullPolicy: IfNotPresent
+        command: ["python3", "/scripts/run_wan21_v5p16_sweep.py"]
+        args:
+        - --accel=v5p
+        - --topology=2x2x4
+        - --nnodes=4
+        - --nproc-per-node=4
+        - --nodepool=tpu-v5p-16-pool
+        - --checkpoint-dir=/models/models/Wan-AI/Wan2.1-T2V-14B-Diffusers/transformer
+        - --results-root=/models/wan21-results
+        env:
+        - name: MASTER_ADDR
+          value: "wan21-v5p-16-pass1-0.wan21-v5p-16-pass1-svc.default.svc.cluster.local"
+        - name: MASTER_PORT
+          value: "29610"
+        - name: PJRT_DEVICE
+          value: "TPU"
+        resources:
+          requests:
+            google.com/tpu: "4"
+          limits:
+            google.com/tpu: "4"
+        volumeMounts:
+        - name: models-gcs
+          mountPath: /models
+        - name: wan21-script
+          mountPath: /scripts
+        - name: dshm
+          mountPath: /dev/shm
+      volumes:
+      - name: dshm
+        emptyDir:
+          medium: Memory
+      - name: models-gcs
+        persistentVolumeClaim:
+          claimName: tpu-models-gcs-pvc
+      - name: wan21-script
+        configMap:
+          name: wan21-v5p16-script
