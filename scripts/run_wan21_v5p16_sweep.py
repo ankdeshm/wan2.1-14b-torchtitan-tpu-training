@@ -156,27 +156,15 @@ def main() -> None:
 
     wait_for_master_dns(master_addr)
 
-    base_xla_flags = filter_supported_xla_flags(
-        [
-            "--xla_tpu_enable_async_collective_fusion=true",
-            "--xla_tpu_enable_async_collective_fusion_fuse_all_gather=true",
-            "--xla_tpu_enable_async_collective_fusion_multiple_steps=true",
-            "--xla_tpu_overlap_compute_collective_tc=true",
-            "--xla_enable_async_all_gather=true",
-            "--xla_enable_async_collective_permute=true",
-        ]
-    )
+    base_xla_flags = ""
     lhs_candidates = [
-        "--xla_tpu_enable_async_collective_fusion=true",
-        "--xla_tpu_enable_async_collective_fusion_fuse_all_gather=true",
-        "--xla_tpu_enable_async_collective_fusion_multiple_steps=true",
-        "--xla_tpu_overlap_compute_collective_tc=true",
         "--xla_enable_async_all_gather=true",
-        "--xla_enable_async_collective_permute=true",
-        "--xla_tpu_enable_latency_hiding_scheduler=true",
+        "--xla_enable_async_all_reduce=true",
         "--xla_tpu_enable_ag_backward_pipelining=true",
-        "--xla_JF_conv_input_fusion=true",
-        "--xla_JF_conv_output_fusion=true",
+        "--xla_tpu_enable_ici_ag_pipelining=true",
+        "--xla_tpu_overlap_compute_collective_tc=true",
+        "--xla_max_concurrent_async_all_gathers=4",
+        "--xla_latency_hiding_scheduler_rerun=2",
     ]
     if args.accel == "v5p":
         lhs_candidates.append("--xla_tpu_scoped_vmem_limit_kib=81920")
@@ -184,6 +172,8 @@ def main() -> None:
         lhs_candidates.extend(
             [
                 "--xla_tpu_enable_sparse_core_collective_aggregator=true",
+                "--xla_tpu_enable_latency_hiding_layer_scheduler=true",
+                "--xla_tpu_use_single_sparse_core_for_reduce_scatter_offload=false",
                 "--xla_tpu_enable_sparse_core_collective_offload_nd_reduce_scatter=true",
                 "--xla_tpu_enable_sparse_core_hierarchical_reduce_scatter=true",
                 "--xla_tpu_dvfs_p_state=7",
