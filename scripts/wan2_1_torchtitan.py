@@ -27,8 +27,8 @@ from pathlib import Path
 import time
 from typing import Any
 
-import spmd_types as spmd
 import torch
+import spmd_types as spmd
 from torch import nn, Tensor
 from torch.distributed.algorithms._checkpoint.checkpoint_wrapper import (
     checkpoint_wrapper as ptd_checkpoint_wrapper,
