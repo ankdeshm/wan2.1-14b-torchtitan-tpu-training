@@ -31,14 +31,26 @@ spec:
       subdomain: wan21-v5p-16-pass1-svc
       restartPolicy: OnFailure
       nodeSelector:
-        cloud.google.com/gke-nodepool: tpu-v5p-16-pool
         cloud.google.com/gke-tpu-accelerator: tpu-v5p-slice
         cloud.google.com/gke-tpu-topology: 2x2x4
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: cloud.google.com/gke-nodepool
+                operator: In
+                values:
+                - tpu-v5p-16-pool
+                - tpu-v5p-16-pool
       tolerations:
       - key: "google.com/tpu"
         operator: "Exists"
         effect: "NoSchedule"
       - key: "cloud.google.com/gke-spot"
+        operator: "Exists"
+        effect: "NoSchedule"
+      - key: "cloud.google.com/gke-queued"
         operator: "Exists"
         effect: "NoSchedule"
       containers:

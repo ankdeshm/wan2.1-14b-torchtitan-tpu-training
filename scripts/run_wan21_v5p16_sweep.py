@@ -334,7 +334,7 @@ def main() -> None:
             f"--hf_checkpoint_dir={args.checkpoint_dir}",
             f"--training.max_context_length={exp['seq_len']}",
             f"--training.num_tokens_per_microbatch_per_dp_rank={exp['mb_tokens']}",
-            f"--training.global_batch_size={global_batch_tokens}",
+            f"--training.num_tokens_per_train_step={global_batch_tokens}",
             f"--training.steps={exp['steps']}",
             f"--training.mixed_precision_reduce={exp['reduce_dtype']}",
             f"--parallelism.data_parallel_replicate_degree={exp['dp_rep']}",

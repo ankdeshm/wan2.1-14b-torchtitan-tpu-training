@@ -899,10 +899,12 @@ class Wan21Trainer(Trainer):
         loss_scale = 1.0 / ga_steps
 
         accum_loss = torch.zeros((), device=self.device, dtype=torch.float32)
-        for _ in range(ga_steps):
+        for mb_idx in range(ga_steps):
             batch = next(data_iterator)
             mb_loss = self.forward_backward_step(input_dict=batch, loss_scale=loss_scale)
             accum_loss = accum_loss + mb_loss.detach().float()
+            if ga_steps > 1 and mb_idx + 1 < ga_steps:
+                torch.tpu.synchronize()
 
         grad_norm = self._clip_grad_norm()
         self.checkpointer.maybe_wait_for_staging()
@@ -963,7 +965,7 @@ def wan2_1_14b_tpu() -> Wan21Trainer.Config:
         metrics=MetricsProcessor.Config(log_freq=1),
         model_spec=build_wan21_model_spec(sa_block=512, save_splash_in_ac=True),
         optimizer=default_adamw(lr=5e-5, implementation="foreach"),
-        lr_scheduler=LRSchedulersContainer.Config(warmup_steps=2, decay_ratio=0.2),
+        lr_scheduler=LRSchedulersContainer.Config(warmup_steps=0, decay_ratio=0.0),
         training=TrainingConfig(
             num_tokens_per_microbatch_per_dp_rank=seq_len,
             max_context_length=seq_len,
