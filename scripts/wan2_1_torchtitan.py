@@ -575,9 +575,8 @@ def parallelize_wan21(
         from torchtitan.experiments.tpu.float8_converter import TpuFloat8LinearConverter
 
         fp8_cfg = TpuFloat8LinearConverter.Config(
-            enable_fsdp_float8_all_gather=False,
-            precompute_float8_dynamic_scale_for_fsdp=False,
-            recipe_name="tensorwise",
+            model_compile_enabled=bool(compile_config.enable and "model" in compile_config.components),
+            recipe_name="rowwise",
             filter_fqns=["patch_embedding", "condition_embedder", "norm_out", "proj_out"],
         )
         TpuFloat8LinearConverter(fp8_cfg).convert(model)
