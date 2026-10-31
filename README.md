@@ -16,7 +16,22 @@ Native **PyTorch [`TorchTitan`](https://github.com/pytorch/torchtitan) + `TorchT
 
 ---
 
-## 2. Repository Structure & Quickstart
+## 2. Verified TPU `v5p-16` (`2x2x4`, `16` Chips) Benchmark Results (`results/SUMMARY.md`)
+
+Measured on `16` TPU `v5p` chips (`459.0` BF16 TFLOP/s/chip peak, `1,520 GiB` aggregate HBM) loading all `12` pretrained `Wan-AI/Wan2.1-T2V-14B-Diffusers` safetensors shards (`1,095 / 1,095` keys):
+
+| # | Experiment | Parallelism | AC Policy | `sa_block` | Seq `S` (`T×H×W` Pixels) | GradAccum | Steady Step (s) | Videos/s (Slice) | Tok/s/chip | Peak HBM (GiB) | **MFU (%)** | Loss (`step 1 -> N`) |
+|---:|---|---|---|---:|---|---:|---:|---:|---:|---:|---:|---|
+| 1 | `wan21_p1_06_fsdp16_splash_save_sa1024_xla_lhs_s16k` | `FSDP-16` | `SplashSaveAC` (`0%` attn recompute) | `1024` | `16,384` (`41×480×832`) | `1×` | **`19.824s`** | **`1.614`** | **`1,652.7`** | `16.25` | **`45.81%`** | `2.0711 -> 1.9939` |
+| 2 | `wan21_p1_04_fsdp16_splash_save_sa1024_xla_lhs_s32k_ga2` | `FSDP-16` | `SplashSaveAC` (`0%` attn recompute) | `1024` | `32,768` (`81×480×832`) | `2×` | **`53.344s`** (`32` vids) | **`0.600`** (`1.67s`/vid) | **`1,228.4`** | `21.51` | **`44.83%`** | `2.0701 -> 1.9939` |
+| 3 | `wan21_p1_02_fsdp16_splash_save_ac_s32k_81x480x832_pretrained` | `FSDP-16` | `SplashSaveAC` (`28/40` blocks saved) | `512` | `32,768` (`81×480×832`) | `1×` | **`31.747s`** (`16` vids) | **`0.504`** (`1.98s`/vid) | **`1,032.3`** | `31.51` | **`37.67%`** | `2.0717 -> 1.9947` |
+| 4 | `wan21_p1_01_fsdp16_fullac_s32k_81x480x832_pretrained` | `FSDP-16` | `FullAC` (recompute attn) | `512` | `32,768` (`81×480×832`) | `1×` | **`33.820s`** (`16` vids) | **`0.473`** (`2.11s`/vid) | **`969.0`** | `25.77` | **`35.36%`** | `2.0717 -> 2.0095` |
+
+> **Comparison vs. Reference Baseline:** At full `81×480×832` (`S = 32,768`), our pure-PyTorch `TorchTitan + TorchTPU` recipe (`0.600` videos/s = **`1.67s/video`** at **`44.83%` MFU**) achieves **`1.51×` higher video training throughput** on the exact same `v5p-16` (`2x2x4`) slice than the published `AI-Hypercomputer/tpu-recipes` JAX MaxDiffusion baseline (`~20.13s` per `bsz=8` step = `0.397` videos/s = `2.52s/video`).
+
+---
+
+## 3. Repository Structure & Quickstart
 
 ```text
 ├── README.md
