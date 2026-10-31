@@ -203,14 +203,14 @@ def main() -> None:
             "steps": 8,
             "load_pretrained": True,
             "xla_flags": base_xla_flags,
-            "use_compiled_opt": False,
+            "use_compiled_opt": True,
         },
         {
             "name": f"wan21_p1_02_fsdp{num_chips}_splash_save_ac_s32k_81x480x832_pretrained",
             "parallelism": f"FSDP-{num_chips}",
             "dp_rep": 1,
             "dp_shard": -1,
-            "ac_mode": "SplashSaveAC (0% attn recompute)",
+            "ac_mode": "SplashSaveAC (28/40 blocks saved)",
             "save_splash": True,
             "sa_block": 512,
             "quant": "BF16 (FP32 Reduce)",
@@ -222,7 +222,7 @@ def main() -> None:
             "steps": 10,
             "load_pretrained": True,
             "xla_flags": base_xla_flags,
-            "use_compiled_opt": False,
+            "use_compiled_opt": True,
         },
         {
             "name": f"wan21_p1_03_fsdp{num_chips}_splash_save_sa1024_xla_lhs_s32k_pretrained",
@@ -356,14 +356,55 @@ def main() -> None:
         log_lines: list[str] = []
         step_records: list[dict] = []
         t_start = time.time()
+        last_activity = [time.time()]
+        fatal_seen_at: list[float] = []
         proc = subprocess.Popen(
-            cmd, cwd=str(workdir), env=env, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, bufsize=1
+            cmd,
+            cwd=str(workdir),
+            env=env,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+            text=True,
+            bufsize=1,
+            start_new_session=True,
         )
+
+        import signal
+        import threading
+
+        stop_wd = threading.Event()
+
+        def _watchdog() -> None:
+            while not stop_wd.wait(3.0):
+                if proc.poll() is not None:
+                    return
+                now = time.time()
+                idle_s = now - last_activity[0]
+                fatal_wait_s = (now - fatal_seen_at[0]) if fatal_seen_at else 0.0
+                if fatal_wait_s > 10.0 or idle_s > 540.0:
+                    reason = f"fatal_cpp_err({fatal_wait_s:.1f}s)" if fatal_seen_at else f"idle_timeout({idle_s:.1f}s)"
+                    print(f"[rank={node_rank}] [watchdog] Killing stuck torchrun group ({reason})", flush=True)
+                    try:
+                        os.killpg(os.getpgid(proc.pid), signal.SIGKILL)
+                    except Exception:
+                        proc.kill()
+                    return
+
+        wd_thread = threading.Thread(target=_watchdog, daemon=True)
+        wd_thread.start()
+
         assert proc.stdout is not None
         for line in proc.stdout:
+            last_activity[0] = time.time()
             sys.stdout.write(line)
             sys.stdout.flush()
             log_lines.append(line)
+            if not fatal_seen_at and (
+                "ExecutionTask failed: RESOURCE_EXHAUSTED" in line
+                or "RuntimeProgramAllocationFailure" in line
+                or "START_SESSION failed" in line
+            ):
+                fatal_seen_at.append(time.time())
             m = STEP_RE.search(line)
             if m and ("[titan]" in line or "root - INFO" in line):
                 step_num = int(m.group("step"))
@@ -381,6 +422,7 @@ def main() -> None:
                             "step_s": float(tm.group("sec")) if tm else 0.0,
                         }
                     )
+        stop_wd.set()
         rc = proc.wait()
         wall_s = time.time() - t_start
 
