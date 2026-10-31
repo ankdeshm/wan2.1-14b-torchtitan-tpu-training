@@ -169,29 +169,39 @@ def main() -> None:
             "--xla_enable_async_collective_permute=true",
         ]
     )
-    lhs_xla_flags = filter_supported_xla_flags(
-        [
-            "--xla_tpu_enable_async_collective_fusion=true",
-            "--xla_tpu_enable_async_collective_fusion_fuse_all_gather=true",
-            "--xla_tpu_enable_async_collective_fusion_multiple_steps=true",
-            "--xla_tpu_overlap_compute_collective_tc=true",
-            "--xla_enable_async_all_gather=true",
-            "--xla_enable_async_collective_permute=true",
-            "--xla_tpu_enable_latency_hiding_scheduler=true",
-            "--xla_tpu_enable_ag_backward_pipelining=true",
-            "--xla_tpu_scoped_vmem_limit_kib=81920",
-            "--xla_JF_conv_input_fusion=true",
-            "--xla_JF_conv_output_fusion=true",
-        ]
-    )
+    lhs_candidates = [
+        "--xla_tpu_enable_async_collective_fusion=true",
+        "--xla_tpu_enable_async_collective_fusion_fuse_all_gather=true",
+        "--xla_tpu_enable_async_collective_fusion_multiple_steps=true",
+        "--xla_tpu_overlap_compute_collective_tc=true",
+        "--xla_enable_async_all_gather=true",
+        "--xla_enable_async_collective_permute=true",
+        "--xla_tpu_enable_latency_hiding_scheduler=true",
+        "--xla_tpu_enable_ag_backward_pipelining=true",
+        "--xla_JF_conv_input_fusion=true",
+        "--xla_JF_conv_output_fusion=true",
+    ]
+    if args.accel == "v5p":
+        lhs_candidates.append("--xla_tpu_scoped_vmem_limit_kib=81920")
+    elif args.accel == "v7x":
+        lhs_candidates.extend(
+            [
+                "--xla_tpu_enable_sparse_core_collective_aggregator=true",
+                "--xla_tpu_enable_sparse_core_collective_offload_nd_reduce_scatter=true",
+                "--xla_tpu_enable_sparse_core_hierarchical_reduce_scatter=true",
+                "--xla_tpu_dvfs_p_state=7",
+            ]
+        )
+    lhs_xla_flags = filter_supported_xla_flags(lhs_candidates)
     compiled_opt_flags = probe_compile_opt_args(str(workdir))
     ts = dt.datetime.now(dt.timezone.utc).strftime("%Y%m%d_%H%M%S")
-    out_dir = Path(args.results_root) / "v5p-16-2x2x4_wan21_14b_pass1"
+    out_dir = Path(args.results_root) / f"{args.accel}-16-{args.topology}_wan21_14b_pass1"
+    hsdp_shard = num_chips // 2
 
     experiments = [
         {
-            "name": "wan21_p1_01_fsdp16_fullac_s32k_81x480x832_pretrained",
-            "parallelism": "FSDP-16",
+            "name": f"wan21_p1_01_fsdp{num_chips}_fullac_s32k_81x480x832_pretrained",
+            "parallelism": f"FSDP-{num_chips}",
             "dp_rep": 1,
             "dp_shard": -1,
             "ac_mode": "FullAC (recompute attn)",
@@ -209,8 +219,8 @@ def main() -> None:
             "use_compiled_opt": False,
         },
         {
-            "name": "wan21_p1_02_fsdp16_splash_save_ac_s32k_81x480x832_pretrained",
-            "parallelism": "FSDP-16",
+            "name": f"wan21_p1_02_fsdp{num_chips}_splash_save_ac_s32k_81x480x832_pretrained",
+            "parallelism": f"FSDP-{num_chips}",
             "dp_rep": 1,
             "dp_shard": -1,
             "ac_mode": "SplashSaveAC (0% attn recompute)",
@@ -228,8 +238,8 @@ def main() -> None:
             "use_compiled_opt": False,
         },
         {
-            "name": "wan21_p1_03_fsdp16_splash_save_sa1024_xla_lhs_s32k_pretrained",
-            "parallelism": "FSDP-16",
+            "name": f"wan21_p1_03_fsdp{num_chips}_splash_save_sa1024_xla_lhs_s32k_pretrained",
+            "parallelism": f"FSDP-{num_chips}",
             "dp_rep": 1,
             "dp_shard": -1,
             "ac_mode": "SplashSaveAC",
@@ -247,8 +257,8 @@ def main() -> None:
             "use_compiled_opt": True,
         },
         {
-            "name": "wan21_p1_04_fsdp16_splash_save_sa1024_xla_lhs_s32k_ga2",
-            "parallelism": "FSDP-16",
+            "name": f"wan21_p1_04_fsdp{num_chips}_splash_save_sa1024_xla_lhs_s32k_ga2",
+            "parallelism": f"FSDP-{num_chips}",
             "dp_rep": 1,
             "dp_shard": -1,
             "ac_mode": "SplashSaveAC",
@@ -266,10 +276,10 @@ def main() -> None:
             "use_compiled_opt": True,
         },
         {
-            "name": "wan21_p1_05_hsdp_2x8_splash_save_sa1024_xla_lhs_s32k",
-            "parallelism": "HSDP 2x8",
+            "name": f"wan21_p1_05_hsdp_2x{hsdp_shard}_splash_save_sa1024_xla_lhs_s32k",
+            "parallelism": f"HSDP 2x{hsdp_shard}",
             "dp_rep": 2,
-            "dp_shard": 8,
+            "dp_shard": hsdp_shard,
             "ac_mode": "SplashSaveAC",
             "save_splash": True,
             "sa_block": 1024,
@@ -285,8 +295,8 @@ def main() -> None:
             "use_compiled_opt": True,
         },
         {
-            "name": "wan21_p1_06_fsdp16_splash_save_sa1024_xla_lhs_s16k",
-            "parallelism": "FSDP-16",
+            "name": f"wan21_p1_06_fsdp{num_chips}_splash_save_sa1024_xla_lhs_s16k",
+            "parallelism": f"FSDP-{num_chips}",
             "dp_rep": 1,
             "dp_shard": -1,
             "ac_mode": "SplashSaveAC",

@@ -753,16 +753,15 @@ class Wan21CachedVideoDataLoader(BaseDataLoader):
             dp_world_size: int,
             dp_rank: int,
             tokenizer: Any,
-            job_config: Any,
-            infinite: bool = True,
+            max_context_length: int,
+            num_tokens_per_batch: int,
+            **kwargs: Any,
         ) -> "Wan21CachedVideoDataLoader":
-            seq_len = job_config.training.max_context_length
-            mb_tokens = job_config.training.num_tokens_per_microbatch_per_dp_rank or seq_len
             return Wan21CachedVideoDataLoader(
                 config=self,
                 dp_rank=dp_rank,
-                seq_len=seq_len,
-                mb_tokens=mb_tokens,
+                seq_len=max_context_length,
+                mb_tokens=num_tokens_per_batch or max_context_length,
             )
 
     def __init__(self, *, config: Config, dp_rank: int, seq_len: int, mb_tokens: int):
@@ -804,6 +803,9 @@ class Wan21CachedVideoDataLoader(BaseDataLoader):
         return {}
 
     def load_state_dict(self, state_dict: dict[str, Any]) -> None:
+        pass
+
+    def close(self) -> None:
         pass
 
 
