@@ -42,10 +42,7 @@ from torch.distributed.tensor import DTensor
 from torch.utils.checkpoint import CheckpointPolicy, create_selective_checkpoint_contexts
 
 from torchtitan.components.checkpointer import CheckpointManager
-try:
-    from torchtitan.components.dataloader import BaseDataLoader
-except ImportError:
-    from torchtitan.components.data import BaseDataLoader
+from torchtitan.components.data.loader import BaseDataLoader
 from torchtitan.components.loss import MSELoss
 from torchtitan.components.metrics import MetricsProcessor
 from torchtitan.components.optimizer import default_adamw, LRSchedulersContainer
@@ -945,6 +942,7 @@ def build_wan21_model_spec(
         name="wan2_1",
         flavor="t2v-14B",
         model=Wan21Model.Config(l_txt=l_txt),
+        max_context_length=32768,
         parallelize_fn=partial(
             parallelize_wan21,
             sa_block=sa_block,
@@ -952,7 +950,6 @@ def build_wan21_model_spec(
             use_fp8_linear=use_fp8_linear,
         ),
         pipelining_fn=None,
-        build_loss_fn=None,
         post_optimizer_build_fn=None,
         state_dict_adapter=None,
     )
