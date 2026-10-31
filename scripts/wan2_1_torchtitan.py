@@ -163,7 +163,9 @@ class WanRotaryEmbed3D(Module):
             self.register_buffer(f"inv_freq_{idx}", inv_freq, persistent=False)
 
     def init_weights(self, buffer_device: torch.device | None = None) -> None:
-        dev = buffer_device or torch.device("cpu")
+        dev = buffer_device or self.inv_freq_0.device
+        if dev.type == "meta":
+            dev = torch.device("cpu")
         for idx, d in enumerate(self.axes_dims):
             inv_freq = 1.0 / (self.theta ** (torch.arange(0, d, 2, dtype=torch.float32, device=dev) / d))
             setattr(self, f"inv_freq_{idx}", inv_freq)
@@ -172,7 +174,7 @@ class WanRotaryEmbed3D(Module):
         # video_pos_ids: [L_vid, 3] float32 -> returns cos, sin each [1, L_vid, 1, 128]
         cos_parts, sin_parts = [], []
         for idx in range(3):
-            inv_f = getattr(self, f"inv_freq_{idx}").float()
+            inv_f = getattr(self, f"inv_freq_{idx}").to(device=video_pos_ids.device, dtype=torch.float32)
             freqs = torch.outer(video_pos_ids[:, idx].float(), inv_f)  # [L_vid, d_i/2]
             emb = torch.repeat_interleave(freqs, 2, dim=-1)  # [L_vid, d_i]
             cos_parts.append(emb.cos())
