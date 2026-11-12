@@ -1,0 +1,444 @@
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1793426606.520893   23927 pjrt_api.cc:119] GetPjrtApi was found for TPU at /usr/local/lib/python3.14/site-packages/libtpu/libtpu.so
+I0000 00:00:1793426607.409242   23927 device_rt.cc:166] PjRt runtime initialization deferred for tpu
+Successfully renamed PrivateUse1 backend to 'tpu'. Device: device(type='tpu')
+Registered Python module for 'tpu'.
+Device type: tpu, Device index: default
+Initializing TPU distributed runtime
+I0000 00:00:1793426607.412417   23927 libtpu_version.cc:63] Setting libtpu version to: 0.0.50
+W1031 06:03:27.444000 23927 site-packages/torch/distributed/run.py:982] 
+W1031 06:03:27.444000 23927 site-packages/torch/distributed/run.py:982] *****************************************
+W1031 06:03:27.444000 23927 site-packages/torch/distributed/run.py:982] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W1031 06:03:27.444000 23927 site-packages/torch/distributed/run.py:982] *****************************************
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1793426610.266744   23996 pjrt_api.cc:119] GetPjrtApi was found for TPU at /usr/local/lib/python3.14/site-packages/libtpu/libtpu.so
+I0000 00:00:1793426610.266738   23995 pjrt_api.cc:119] GetPjrtApi was found for TPU at /usr/local/lib/python3.14/site-packages/libtpu/libtpu.so
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1793426610.400370   23994 pjrt_api.cc:119] GetPjrtApi was found for TPU at /usr/local/lib/python3.14/site-packages/libtpu/libtpu.so
+I0000 00:00:1793426610.400370   23997 pjrt_api.cc:119] GetPjrtApi was found for TPU at /usr/local/lib/python3.14/site-packages/libtpu/libtpu.so
+I0000 00:00:1793426611.154529   23996 device_rt.cc:166] PjRt runtime initialization deferred for tpu
+Successfully renamed PrivateUse1 backend to 'tpu'. Device: device(type='tpu')
+Registered Python module for 'tpu'.
+Device type: tpu, Device index: default
+Initializing TPU distributed runtime
+I0000 00:00:1793426611.157025   23995 device_rt.cc:166] PjRt runtime initialization deferred for tpu
+Successfully renamed PrivateUse1 backend to 'tpu'. Device: device(type='tpu')
+Registered Python module for 'tpu'.
+Device type: tpu, Device index: default
+Initializing TPU distributed runtime
+I0000 00:00:1793426611.157750   23996 libtpu_version.cc:63] Setting libtpu version to: 0.0.50
+I0000 00:00:1793426611.160142   23995 libtpu_version.cc:63] Setting libtpu version to: 0.0.50
+I0000 00:00:1793426611.294758   23994 device_rt.cc:166] PjRt runtime initialization deferred for tpu
+Successfully renamed PrivateUse1 backend to 'tpu'. Device: device(type='tpu')
+Registered Python module for 'tpu'.
+Device type: tpu, Device index: default
+Initializing TPU distributed runtime
+I0000 00:00:1793426611.295052   23997 device_rt.cc:166] PjRt runtime initialization deferred for tpu
+Successfully renamed PrivateUse1 backend to 'tpu'. Device: device(type='tpu')
+Registered Python module for 'tpu'.
+Device type: tpu, Device index: default
+Initializing TPU distributed runtime
+I0000 00:00:1793426611.297950   23994 libtpu_version.cc:63] Setting libtpu version to: 0.0.50
+I0000 00:00:1793426611.298226   23997 libtpu_version.cc:63] Setting libtpu version to: 0.0.50
+WARNING:torchao:Failed to load /usr/local/lib/python3.14/site-packages/torchao/_C_mxfp8.cpython-310-x86_64-linux-gnu.so: Could not load this library: /usr/local/lib/python3.14/site-packages/torchao/_C_mxfp8.cpython-310-x86_64-linux-gnu.so
+WARNING:torchao:Failed to load /usr/local/lib/python3.14/site-packages/torchao/_C_mxfp8.cpython-310-x86_64-linux-gnu.so: Could not load this library: /usr/local/lib/python3.14/site-packages/torchao/_C_mxfp8.cpython-310-x86_64-linux-gnu.so
+WARNING:torchao:Failed to load /usr/local/lib/python3.14/site-packages/torchao/_C_cutlass_90a.abi3.so: Could not load this library: /usr/local/lib/python3.14/site-packages/torchao/_C_cutlass_90a.abi3.so
+WARNING:torchao:Failed to load /usr/local/lib/python3.14/site-packages/torchao/_C_cutlass_90a.abi3.so: Could not load this library: /usr/local/lib/python3.14/site-packages/torchao/_C_cutlass_90a.abi3.so
+W1031 06:03:33.061000 23996 site-packages/torch/utils/_pytree.py:646] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1031 06:03:33.061000 23995 site-packages/torch/utils/_pytree.py:646] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1031 06:03:33.086000 23996 site-packages/torch/utils/_pytree.py:646] <enum 'ScaleCalculationMode'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1031 06:03:33.086000 23995 site-packages/torch/utils/_pytree.py:646] <enum 'ScaleCalculationMode'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+WARNING:torchao:Failed to load /usr/local/lib/python3.14/site-packages/torchao/_C_mxfp8.cpython-310-x86_64-linux-gnu.so: Could not load this library: /usr/local/lib/python3.14/site-packages/torchao/_C_mxfp8.cpython-310-x86_64-linux-gnu.so
+WARNING:torchao:Failed to load /usr/local/lib/python3.14/site-packages/torchao/_C_cutlass_90a.abi3.so: Could not load this library: /usr/local/lib/python3.14/site-packages/torchao/_C_cutlass_90a.abi3.so
+WARNING:torchao:Failed to load /usr/local/lib/python3.14/site-packages/torchao/_C_mxfp8.cpython-310-x86_64-linux-gnu.so: Could not load this library: /usr/local/lib/python3.14/site-packages/torchao/_C_mxfp8.cpython-310-x86_64-linux-gnu.so
+WARNING:torchao:Failed to load /usr/local/lib/python3.14/site-packages/torchao/_C_cutlass_90a.abi3.so: Could not load this library: /usr/local/lib/python3.14/site-packages/torchao/_C_cutlass_90a.abi3.so
+W1031 06:03:33.208000 23997 site-packages/torch/utils/_pytree.py:646] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1031 06:03:33.211000 23994 site-packages/torch/utils/_pytree.py:646] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1031 06:03:33.232000 23997 site-packages/torch/utils/_pytree.py:646] <enum 'ScaleCalculationMode'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1031 06:03:33.235000 23994 site-packages/torch/utils/_pytree.py:646] <enum 'ScaleCalculationMode'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1031 06:03:33.607624 140499180767168 base.py:654] initial_load_model_only=True has no effect without an initial_load_path.
+W1031 06:03:33.615190 137734943283136 base.py:654] initial_load_model_only=True has no effect without an initial_load_path.
+W1031 06:03:33.757923 140521376438208 base.py:654] initial_load_model_only=True has no effect without an initial_load_path.
+W1031 06:03:33.759604 139473473181632 base.py:654] initial_load_model_only=True has no effect without an initial_load_path.
+W1031 06:03:33.949392 140499180767168 base.py:654] initial_load_model_only=True has no effect without an initial_load_path.
+W1031 06:03:33.950442 140499180767168 manager.py:229] HF assets path  does not exist!
+I1031 06:03:33.950557 140499180767168 distributed_utils.py:21] Platform: Cloud. Initializing via cloud_distributed_utils.
+I1031 06:03:33.950605 140499180767168 cloud_distributed_utils.py:293] Trying to initialize distributed TPU training on GKE.
+/torchtitan-native/torchtitan/experiments/tpu/gmain.py:45: UserWarning: <TorchTpu/ApiStage/ExperimentalApi/> set_eager_mode is experimental and subject to change: Context manager for setting the eager mode.
+  with execution_mode.set_eager_mode(eager_mode_enum):
+I1031 06:03:33.950968 140499180767168 workarounds.py:634] Monkey-patched torch.histc to support int dtypes on CPU
+[W1031 06:03:33.467060291 env_vars.h:405] Warning: <TorchTpu/ApiStage/ExperimentalApi/> the TORCH_TPU_SLICEBUILDER_ADDRESSES environment variable is an experimental feature and may change or be removed without notice. (function operator())
+[W1031 06:03:33.467087955 env_vars.h:405] Warning: <TorchTpu/ApiStage/ExperimentalApi/> the TORCH_TPU_TOPOLOGY environment variable is an experimental feature and may change or be removed without notice. (function operator())
+I0000 00:00:1793426613.951215   23996 discovery.cc:125] DistributedWorkerConfiguration: 2 2 16 wan21-v5p-16-sweep-0.wan21-v5p-16-sweep-svc:10000,wan21-v5p-16-sweep-0.wan21-v5p-16-sweep-svc:10001,wan21-v5p-16-sweep-0.wan21-v5p-16-sweep-svc:10002,wan21-v5p-16-sweep-0.wan21-v5p-16-sweep-svc:10003,wan21-v5p-16-sweep-1.wan21-v5p-16-sweep-svc:10000,wan21-v5p-16-sweep-1.wan21-v5p-16-sweep-svc:10001,wan21-v5p-16-sweep-1.wan21-v5p-16-sweep-svc:10002,wan21-v5p-16-sweep-1.wan21-v5p-16-sweep-svc:10003,wan21-v5p-16-sweep-2.wan21-v5p-16-sweep-svc:10000,wan21-v5p-16-sweep-2.wan21-v5p-16-sweep-svc:10001,wan21-v5p-16-sweep-2.wan21-v5p-16-sweep-svc:10002,wan21-v5p-16-sweep-2.wan21-v5p-16-sweep-svc:10003,wan21-v5p-16-sweep-3.wan21-v5p-16-sweep-svc:10000,wan21-v5p-16-sweep-3.wan21-v5p-16-sweep-svc:10001,wan21-v5p-16-sweep-3.wan21-v5p-16-sweep-svc:10002,wan21-v5p-16-sweep-3.wan21-v5p-16-sweep-svc:10003 10002 2,2,4
+W0000 00:00:1793426613.951265   23996 environment.cc:70] libtpu_init_args contains --xla_tpu_use_enhanced_launch_barrier=true, this can cause distributed hangs. Rewriting environment variable to false.
+I0000 00:00:1793426613.951282   23996 pjrt_api.cc:168] The PJRT plugin has PJRT API version 0.116. The framework PJRT API version is 0.116.
+W1031 06:03:33.958234 137734943283136 base.py:654] initial_load_model_only=True has no effect without an initial_load_path.
+W1031 06:03:33.959269 137734943283136 manager.py:229] HF assets path  does not exist!
+I1031 06:03:33.959386 137734943283136 distributed_utils.py:21] Platform: Cloud. Initializing via cloud_distributed_utils.
+I1031 06:03:33.959437 137734943283136 cloud_distributed_utils.py:293] Trying to initialize distributed TPU training on GKE.
+/torchtitan-native/torchtitan/experiments/tpu/gmain.py:45: UserWarning: <TorchTpu/ApiStage/ExperimentalApi/> set_eager_mode is experimental and subject to change: Context manager for setting the eager mode.
+  with execution_mode.set_eager_mode(eager_mode_enum):
+I1031 06:03:33.959797 137734943283136 workarounds.py:634] Monkey-patched torch.histc to support int dtypes on CPU
+[W1031 06:03:33.475863701 env_vars.h:405] Warning: <TorchTpu/ApiStage/ExperimentalApi/> the TORCH_TPU_SLICEBUILDER_ADDRESSES environment variable is an experimental feature and may change or be removed without notice. (function operator())
+[W1031 06:03:33.475885542 env_vars.h:405] Warning: <TorchTpu/ApiStage/ExperimentalApi/> the TORCH_TPU_TOPOLOGY environment variable is an experimental feature and may change or be removed without notice. (function operator())
+I0000 00:00:1793426613.960009   23995 discovery.cc:125] DistributedWorkerConfiguration: 1 1 16 wan21-v5p-16-sweep-0.wan21-v5p-16-sweep-svc:10000,wan21-v5p-16-sweep-0.wan21-v5p-16-sweep-svc:10001,wan21-v5p-16-sweep-0.wan21-v5p-16-sweep-svc:10002,wan21-v5p-16-sweep-0.wan21-v5p-16-sweep-svc:10003,wan21-v5p-16-sweep-1.wan21-v5p-16-sweep-svc:10000,wan21-v5p-16-sweep-1.wan21-v5p-16-sweep-svc:10001,wan21-v5p-16-sweep-1.wan21-v5p-16-sweep-svc:10002,wan21-v5p-16-sweep-1.wan21-v5p-16-sweep-svc:10003,wan21-v5p-16-sweep-2.wan21-v5p-16-sweep-svc:10000,wan21-v5p-16-sweep-2.wan21-v5p-16-sweep-svc:10001,wan21-v5p-16-sweep-2.wan21-v5p-16-sweep-svc:10002,wan21-v5p-16-sweep-2.wan21-v5p-16-sweep-svc:10003,wan21-v5p-16-sweep-3.wan21-v5p-16-sweep-svc:10000,wan21-v5p-16-sweep-3.wan21-v5p-16-sweep-svc:10001,wan21-v5p-16-sweep-3.wan21-v5p-16-sweep-svc:10002,wan21-v5p-16-sweep-3.wan21-v5p-16-sweep-svc:10003 10001 2,2,4
+W0000 00:00:1793426613.960046   23995 environment.cc:70] libtpu_init_args contains --xla_tpu_use_enhanced_launch_barrier=true, this can cause distributed hangs. Rewriting environment variable to false.
+I0000 00:00:1793426613.960062   23995 pjrt_api.cc:168] The PJRT plugin has PJRT API version 0.116. The framework PJRT API version is 0.116.
+W1031 06:03:34.530544 140521376438208 base.py:654] initial_load_model_only=True has no effect without an initial_load_path.
+W1031 06:03:34.531641 140521376438208 manager.py:229] HF assets path  does not exist!
+I1031 06:03:34.531759 140521376438208 distributed_utils.py:21] Platform: Cloud. Initializing via cloud_distributed_utils.
+I1031 06:03:34.531810 140521376438208 cloud_distributed_utils.py:293] Trying to initialize distributed TPU training on GKE.
+/torchtitan-native/torchtitan/experiments/tpu/gmain.py:45: UserWarning: <TorchTpu/ApiStage/ExperimentalApi/> set_eager_mode is experimental and subject to change: Context manager for setting the eager mode.
+  with execution_mode.set_eager_mode(eager_mode_enum):
+I1031 06:03:34.532204 140521376438208 workarounds.py:634] Monkey-patched torch.histc to support int dtypes on CPU
+[W1031 06:03:34.048286744 env_vars.h:405] Warning: <TorchTpu/ApiStage/ExperimentalApi/> the TORCH_TPU_SLICEBUILDER_ADDRESSES environment variable is an experimental feature and may change or be removed without notice. (function operator())
+[W1031 06:03:34.048316112 env_vars.h:405] Warning: <TorchTpu/ApiStage/ExperimentalApi/> the TORCH_TPU_TOPOLOGY environment variable is an experimental feature and may change or be removed without notice. (function operator())
+I0000 00:00:1793426614.532441   23997 discovery.cc:125] DistributedWorkerConfiguration: 3 3 16 wan21-v5p-16-sweep-0.wan21-v5p-16-sweep-svc:10000,wan21-v5p-16-sweep-0.wan21-v5p-16-sweep-svc:10001,wan21-v5p-16-sweep-0.wan21-v5p-16-sweep-svc:10002,wan21-v5p-16-sweep-0.wan21-v5p-16-sweep-svc:10003,wan21-v5p-16-sweep-1.wan21-v5p-16-sweep-svc:10000,wan21-v5p-16-sweep-1.wan21-v5p-16-sweep-svc:10001,wan21-v5p-16-sweep-1.wan21-v5p-16-sweep-svc:10002,wan21-v5p-16-sweep-1.wan21-v5p-16-sweep-svc:10003,wan21-v5p-16-sweep-2.wan21-v5p-16-sweep-svc:10000,wan21-v5p-16-sweep-2.wan21-v5p-16-sweep-svc:10001,wan21-v5p-16-sweep-2.wan21-v5p-16-sweep-svc:10002,wan21-v5p-16-sweep-2.wan21-v5p-16-sweep-svc:10003,wan21-v5p-16-sweep-3.wan21-v5p-16-sweep-svc:10000,wan21-v5p-16-sweep-3.wan21-v5p-16-sweep-svc:10001,wan21-v5p-16-sweep-3.wan21-v5p-16-sweep-svc:10002,wan21-v5p-16-sweep-3.wan21-v5p-16-sweep-svc:10003 10003 2,2,4
+W0000 00:00:1793426614.532485   23997 environment.cc:70] libtpu_init_args contains --xla_tpu_use_enhanced_launch_barrier=true, this can cause distributed hangs. Rewriting environment variable to false.
+I0000 00:00:1793426614.532504   23997 pjrt_api.cc:168] The PJRT plugin has PJRT API version 0.116. The framework PJRT API version is 0.116.
+W1031 06:03:34.546225 139473473181632 base.py:654] initial_load_model_only=True has no effect without an initial_load_path.
+W1031 06:03:34.547316 139473473181632 manager.py:229] HF assets path  does not exist!
+I1031 06:03:34.547438 139473473181632 distributed_utils.py:21] Platform: Cloud. Initializing via cloud_distributed_utils.
+I1031 06:03:34.547487 139473473181632 cloud_distributed_utils.py:293] Trying to initialize distributed TPU training on GKE.
+/torchtitan-native/torchtitan/experiments/tpu/gmain.py:45: UserWarning: <TorchTpu/ApiStage/ExperimentalApi/> set_eager_mode is experimental and subject to change: Context manager for setting the eager mode.
+  with execution_mode.set_eager_mode(eager_mode_enum):
+[titan] 2026-10-31 06:03:34,548 - root - INFO - Monkey-patched torch.histc to support int dtypes on CPU
+[W1031 06:03:34.064131216 env_vars.h:405] Warning: <TorchTpu/ApiStage/ExperimentalApi/> the TORCH_TPU_SLICEBUILDER_ADDRESSES environment variable is an experimental feature and may change or be removed without notice. (function operator())
+[W1031 06:03:34.064154239 env_vars.h:405] Warning: <TorchTpu/ApiStage/ExperimentalApi/> the TORCH_TPU_TOPOLOGY environment variable is an experimental feature and may change or be removed without notice. (function operator())
+I0000 00:00:1793426614.548277   23994 discovery.cc:125] DistributedWorkerConfiguration: 0 0 16 wan21-v5p-16-sweep-0.wan21-v5p-16-sweep-svc:10000,wan21-v5p-16-sweep-0.wan21-v5p-16-sweep-svc:10001,wan21-v5p-16-sweep-0.wan21-v5p-16-sweep-svc:10002,wan21-v5p-16-sweep-0.wan21-v5p-16-sweep-svc:10003,wan21-v5p-16-sweep-1.wan21-v5p-16-sweep-svc:10000,wan21-v5p-16-sweep-1.wan21-v5p-16-sweep-svc:10001,wan21-v5p-16-sweep-1.wan21-v5p-16-sweep-svc:10002,wan21-v5p-16-sweep-1.wan21-v5p-16-sweep-svc:10003,wan21-v5p-16-sweep-2.wan21-v5p-16-sweep-svc:10000,wan21-v5p-16-sweep-2.wan21-v5p-16-sweep-svc:10001,wan21-v5p-16-sweep-2.wan21-v5p-16-sweep-svc:10002,wan21-v5p-16-sweep-2.wan21-v5p-16-sweep-svc:10003,wan21-v5p-16-sweep-3.wan21-v5p-16-sweep-svc:10000,wan21-v5p-16-sweep-3.wan21-v5p-16-sweep-svc:10001,wan21-v5p-16-sweep-3.wan21-v5p-16-sweep-svc:10002,wan21-v5p-16-sweep-3.wan21-v5p-16-sweep-svc:10003 10000 2,2,4
+W0000 00:00:1793426614.548313   23994 environment.cc:70] libtpu_init_args contains --xla_tpu_use_enhanced_launch_barrier=true, this can cause distributed hangs. Rewriting environment variable to false.
+I0000 00:00:1793426614.548332   23994 pjrt_api.cc:168] The PJRT plugin has PJRT API version 0.116. The framework PJRT API version is 0.116.
+I0000 00:00:1793426617.271131   23996 pjrt_c_api_client.cc:187] PjRtCApiClient created.
+/torchtitan-native/torchtitan/trainer.py:357: UserWarning: <TorchTpu/ApiStage/ExperimentalApi/> Stream is experimental and subject to change: Stream() is experimental and may change or be removed without notice.
+  device_module.Stream(device=self.device)
+W1031 06:03:37.284104 140499180767168 utils.py:517] ENV[TORCH_NCCL_ASYNC_ERROR_HANDLING] = 1 will be overridden to 3 based on job config
+W0000 00:00:1793426617.289655   23996 process_group_tpu.cc:1299] Node-local store disabled: LOCAL_RANK or TORCH_TPU_DEVICES_PER_HOST is unset (local_rank=2 devices_per_host=unset world_size=16). Every rank will publish to the world store individually, which is slower at scale.
+I0000 00:00:1793426617.339250   23994 pjrt_c_api_client.cc:187] PjRtCApiClient created.
+/torchtitan-native/torchtitan/trainer.py:357: UserWarning: <TorchTpu/ApiStage/ExperimentalApi/> Stream is experimental and subject to change: Stream() is experimental and may change or be removed without notice.
+  device_module.Stream(device=self.device)
+[titan] 2026-10-31 06:03:37,344 - root - WARNING - ENV[TORCH_NCCL_ASYNC_ERROR_HANDLING] = 1 will be overridden to 3 based on job config
+I0000 00:00:1793426617.355474   23995 pjrt_c_api_client.cc:187] PjRtCApiClient created.
+/torchtitan-native/torchtitan/trainer.py:357: UserWarning: <TorchTpu/ApiStage/ExperimentalApi/> Stream is experimental and subject to change: Stream() is experimental and may change or be removed without notice.
+  device_module.Stream(device=self.device)
+W1031 06:03:37.365976 137734943283136 utils.py:517] ENV[TORCH_NCCL_ASYNC_ERROR_HANDLING] = 1 will be overridden to 3 based on job config
+W0000 00:00:1793426617.366863   23995 process_group_tpu.cc:1299] Node-local store disabled: LOCAL_RANK or TORCH_TPU_DEVICES_PER_HOST is unset (local_rank=1 devices_per_host=unset world_size=16). Every rank will publish to the world store individually, which is slower at scale.
+I0000 00:00:1793426617.366897   23997 pjrt_c_api_client.cc:187] PjRtCApiClient created.
+/torchtitan-native/torchtitan/trainer.py:357: UserWarning: <TorchTpu/ApiStage/ExperimentalApi/> Stream is experimental and subject to change: Stream() is experimental and may change or be removed without notice.
+  device_module.Stream(device=self.device)
+W1031 06:03:37.367418 140521376438208 utils.py:517] ENV[TORCH_NCCL_ASYNC_ERROR_HANDLING] = 1 will be overridden to 3 based on job config
+W0000 00:00:1793426617.368337   23997 process_group_tpu.cc:1299] Node-local store disabled: LOCAL_RANK or TORCH_TPU_DEVICES_PER_HOST is unset (local_rank=3 devices_per_host=unset world_size=16). Every rank will publish to the world store individually, which is slower at scale.
+W0000 00:00:1793426617.394658   23994 process_group_tpu.cc:1299] Node-local store disabled: LOCAL_RANK or TORCH_TPU_DEVICES_PER_HOST is unset (local_rank=0 devices_per_host=unset world_size=16). Every rank will publish to the world store individually, which is slower at scale.
+I0000 00:00:1793426618.420054   23994 process_group_tpu.cc:1269] AllGatherViaNodeLocalStore(world_topo:0:16): gathered 16 entries from 16 nodes in 1025 ms
+I1031 06:03:38.420585 140499180767168 parallel_dims.py:255] Building device mesh with parallelism: pp=1, dp_replicate=1, dp_shard=16, cp=1, tp=1, ep=1
+[titan] 2026-10-31 06:03:38,420 - root - INFO - Building device mesh with parallelism: pp=1, dp_replicate=1, dp_shard=16, cp=1, tp=1, ep=1
+I1031 06:03:38.420619 137734943283136 parallel_dims.py:255] Building device mesh with parallelism: pp=1, dp_replicate=1, dp_shard=16, cp=1, tp=1, ep=1
+I1031 06:03:38.420738 140521376438208 parallel_dims.py:255] Building device mesh with parallelism: pp=1, dp_replicate=1, dp_shard=16, cp=1, tp=1, ep=1
+I1031 06:03:38.430412 137734943283136 utils.py:304] [GC] Initial GC collection took 0.00 seconds
+I1031 06:03:38.430426 140499180767168 utils.py:304] [GC] Initial GC collection took 0.00 seconds
+[titan] 2026-10-31 06:03:38,430 - root - INFO - [GC] Initial GC collection took 0.00 seconds
+I1031 06:03:38.430817 140521376438208 utils.py:304] [GC] Initial GC collection took 0.00 seconds
+I1031 06:03:38.438736 140499180767168 trainer.py:443] Building wan2_1 t2v-14B
+I1031 06:03:38.438925 137734943283136 trainer.py:443] Building wan2_1 t2v-14B
+[titan] 2026-10-31 06:03:38,439 - root - INFO - Building wan2_1 t2v-14B
+I1031 06:03:38.439240 140521376438208 trainer.py:443] Building wan2_1 t2v-14B
+/torchtitan-native/torchtitan/components/metrics.py:44: UserWarning: <TorchTpu/ApiStage/ExperimentalApi/> get_device_name is experimental and subject to change: get_device_name() is experimental and subject to change without notice.
+  self.device_name = device_module.get_device_name(self.device)
+/torchtitan-native/torchtitan/components/metrics.py:44: UserWarning: <TorchTpu/ApiStage/ExperimentalApi/> get_device_name is experimental and subject to change: get_device_name() is experimental and subject to change without notice.
+  self.device_name = device_module.get_device_name(self.device)
+/torchtitan-native/torchtitan/components/metrics.py:46: UserWarning: <TorchTpu/ApiStage/ExperimentalApi/> get_device_properties is experimental and subject to change: get_device_properties() is experimental and subject to change without notice.
+  self.device_capacity = device_module.get_device_properties(
+/torchtitan-native/torchtitan/components/metrics.py:46: UserWarning: <TorchTpu/ApiStage/ExperimentalApi/> get_device_properties is experimental and subject to change: get_device_properties() is experimental and subject to change without notice.
+  self.device_capacity = device_module.get_device_properties(
+I1031 06:03:38.572558 137734943283136 metrics.py:99] TPU capacity: TPU v5p with 95.00GiB memory
+[titan] 2026-10-31 06:03:38,572 - root - INFO - TPU capacity: TPU v5p with 95.00GiB memory
+W1031 06:03:38.573218 137734943283136 utils.py:322] Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-10-31 06:03:38,573 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+/torchtitan-native/torchtitan/components/metrics.py:44: UserWarning: <TorchTpu/ApiStage/ExperimentalApi/> get_device_name is experimental and subject to change: get_device_name() is experimental and subject to change without notice.
+  self.device_name = device_module.get_device_name(self.device)
+/torchtitan-native/torchtitan/components/metrics.py:46: UserWarning: <TorchTpu/ApiStage/ExperimentalApi/> get_device_properties is experimental and subject to change: get_device_properties() is experimental and subject to change without notice.
+  self.device_capacity = device_module.get_device_properties(
+I1031 06:03:38.574308 140521376438208 metrics.py:99] TPU capacity: TPU v5p with 95.00GiB memory
+W1031 06:03:38.574882 140521376438208 utils.py:322] Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+I1031 06:03:38.576093 137734943283136 trainer.py:477] [34mModel wan2_1 t2v-14B [31msize: 14,288,491,584 total parameters[39m
+[titan] 2026-10-31 06:03:38,576 - root - INFO - [34mModel wan2_1 t2v-14B [31msize: 14,288,491,584 total parameters[39m
+I1031 06:03:38.577100 137734943283136 wan2_1_torchtitan.py:599] Patched 40 WanTransformerBlocks.attn1 with bidirectional SplashAttention(sa_block=1024)
+[titan] 2026-10-31 06:03:38,577 - root - INFO - Patched 40 WanTransformerBlocks.attn1 with bidirectional SplashAttention(sa_block=1024)
+I1031 06:03:38.577733 140521376438208 trainer.py:477] [34mModel wan2_1 t2v-14B [31msize: 14,288,491,584 total parameters[39m
+I1031 06:03:38.578052 137734943283136 wan2_1_torchtitan.py:619] Applied Activation Checkpointing (save_splash_in_ac=True, saved_blocks=28/40) to 40 blocks
+[titan] 2026-10-31 06:03:38,578 - root - INFO - Applied Activation Checkpointing (save_splash_in_ac=True, saved_blocks=28/40) to 40 blocks
+/torchtitan-native/torchtitan/experiments/tpu/spmd_utils.py:20: UserWarning: <TorchTpu/ApiStage/ExperimentalApi/> spmd_safe is experimental and subject to change: torch.tpu.distributed.spmd_safe is experimental and subject to change.
+  mod.forward = spmd_safe(orig_forward)
+/torchtitan-native/torchtitan/experiments/tpu/spmd_utils.py:20: UserWarning: <TorchTpu/ApiStage/ExperimentalApi/> spmd_safe is experimental and subject to change: torch.tpu.distributed.spmd_safe is experimental and subject to change.
+  mod.forward = spmd_safe(orig_forward)
+I1031 06:03:38.578775 140521376438208 wan2_1_torchtitan.py:599] Patched 40 WanTransformerBlocks.attn1 with bidirectional SplashAttention(sa_block=1024)
+I1031 06:03:38.579737 140521376438208 wan2_1_torchtitan.py:619] Applied Activation Checkpointing (save_splash_in_ac=True, saved_blocks=28/40) to 40 blocks
+/torchtitan-native/torchtitan/experiments/tpu/spmd_utils.py:20: UserWarning: <TorchTpu/ApiStage/ExperimentalApi/> spmd_safe is experimental and subject to change: torch.tpu.distributed.spmd_safe is experimental and subject to change.
+  mod.forward = spmd_safe(orig_forward)
+/torchtitan-native/torchtitan/components/metrics.py:44: UserWarning: <TorchTpu/ApiStage/ExperimentalApi/> get_device_name is experimental and subject to change: get_device_name() is experimental and subject to change without notice.
+  self.device_name = device_module.get_device_name(self.device)
+/torchtitan-native/torchtitan/components/metrics.py:46: UserWarning: <TorchTpu/ApiStage/ExperimentalApi/> get_device_properties is experimental and subject to change: get_device_properties() is experimental and subject to change without notice.
+  self.device_capacity = device_module.get_device_properties(
+I1031 06:03:38.580821 140499180767168 metrics.py:99] TPU capacity: TPU v5p with 95.00GiB memory
+W1031 06:03:38.581426 140499180767168 utils.py:322] Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+I1031 06:03:38.584262 140499180767168 trainer.py:477] [34mModel wan2_1 t2v-14B [31msize: 14,288,491,584 total parameters[39m
+I1031 06:03:38.585283 140499180767168 wan2_1_torchtitan.py:599] Patched 40 WanTransformerBlocks.attn1 with bidirectional SplashAttention(sa_block=1024)
+I1031 06:03:38.586238 140499180767168 wan2_1_torchtitan.py:619] Applied Activation Checkpointing (save_splash_in_ac=True, saved_blocks=28/40) to 40 blocks
+/torchtitan-native/torchtitan/experiments/tpu/spmd_utils.py:20: UserWarning: <TorchTpu/ApiStage/ExperimentalApi/> spmd_safe is experimental and subject to change: torch.tpu.distributed.spmd_safe is experimental and subject to change.
+  mod.forward = spmd_safe(orig_forward)
+I1031 06:03:38.599624 137734943283136 wan2_1_torchtitan.py:628] Compiled 40 WanTransformerBlocks with torch.compile(backend='tpu')
+[titan] 2026-10-31 06:03:38,600 - root - INFO - Compiled 40 WanTransformerBlocks with torch.compile(backend='tpu')
+I1031 06:03:38.601783 140521376438208 wan2_1_torchtitan.py:628] Compiled 40 WanTransformerBlocks with torch.compile(backend='tpu')
+I1031 06:03:38.607795 140499180767168 wan2_1_torchtitan.py:628] Compiled 40 WanTransformerBlocks with torch.compile(backend='tpu')
+[titan] 2026-10-31 06:03:38,859 - root - INFO - Applied FSDP2 fully_shard (replicate=1, shard=16) to Wan21Model
+I1031 06:03:38.859654 137734943283136 wan2_1_torchtitan.py:655] Applied FSDP2 fully_shard (replicate=1, shard=16) to Wan21Model
+I1031 06:03:38.861412 140521376438208 wan2_1_torchtitan.py:655] Applied FSDP2 fully_shard (replicate=1, shard=16) to Wan21Model
+I1031 06:03:38.874397 140499180767168 wan2_1_torchtitan.py:655] Applied FSDP2 fully_shard (replicate=1, shard=16) to Wan21Model
+I0000 00:00:1793426618.927656   25591 compilation_cache_utils.cc:218] Tier-3 compilation cache root directory: 
+I0000 00:00:1793426618.927685   25591 tier2_compilation_cache.cc:84] Tier-2 compilation cache is enabled with name 'default' for world size 16.
+I0000 00:00:1793426618.927693   25591 tier3_compilation_cache.cc:50] Backup compilation for tier-3 cache read is disabled as tier-3 cache is disabled.
+I0000 00:00:1793426618.927740   26560 compilation_cache_utils.cc:99] Tier-2 cache uses TorchTPU binary fingerprint: 089b6fae7e012d19
+  based on TorchTPU binary version 5 and PjRt version:
+TFRT TPU v5
+Built on Oct 7 2026 00:47:01 (1791359221) cl/994787025
+C API version: 0.116
+I0000 00:00:1793426618.928253   25593 compilation_cache_utils.cc:218] Tier-3 compilation cache root directory: 
+I0000 00:00:1793426618.928290   25593 tier2_compilation_cache.cc:84] Tier-2 compilation cache is enabled with name 'default' for world size 16.
+I0000 00:00:1793426618.928298   25593 tier3_compilation_cache.cc:50] Backup compilation for tier-3 cache read is disabled as tier-3 cache is disabled.
+I0000 00:00:1793426618.928340   26587 compilation_cache_utils.cc:99] Tier-2 cache uses TorchTPU binary fingerprint: 089b6fae7e012d19
+  based on TorchTPU binary version 5 and PjRt version:
+TFRT TPU v5
+Built on Oct 7 2026 00:47:01 (1791359221) cl/994787025
+C API version: 0.116
+I0000 00:00:1793426618.942744   25786 compilation_cache_utils.cc:218] Tier-3 compilation cache root directory: 
+I0000 00:00:1793426618.942767   25786 tier2_compilation_cache.cc:84] Tier-2 compilation cache is enabled with name 'default' for world size 16.
+I0000 00:00:1793426618.942773   25786 tier3_compilation_cache.cc:50] Backup compilation for tier-3 cache read is disabled as tier-3 cache is disabled.
+I0000 00:00:1793426618.942821   26843 compilation_cache_utils.cc:99] Tier-2 cache uses TorchTPU binary fingerprint: 089b6fae7e012d19
+  based on TorchTPU binary version 5 and PjRt version:
+TFRT TPU v5
+Built on Oct 7 2026 00:47:01 (1791359221) cl/994787025
+C API version: 0.116
+I0000 00:00:1793426619.042283   26846 compilation_cache_utils.cc:218] Tier-3 compilation cache root directory: 
+I0000 00:00:1793426619.042306   26846 tier2_compilation_cache.cc:84] Tier-2 compilation cache is enabled with name 'default' for world size 16.
+I0000 00:00:1793426619.042313   26846 tier3_compilation_cache.cc:50] Backup compilation for tier-3 cache read is disabled as tier-3 cache is disabled.
+I0000 00:00:1793426619.042362   27262 compilation_cache_utils.cc:99] Tier-2 cache uses TorchTPU binary fingerprint: 089b6fae7e012d19
+  based on TorchTPU binary version 5 and PjRt version:
+TFRT TPU v5
+Built on Oct 7 2026 00:47:01 (1791359221) cl/994787025
+C API version: 0.116
+[titan] 2026-10-31 06:03:39,857 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-10-31 06:03:39,857 - root - INFO - Peak FLOPS used for computing MFU: 4.590e+14
+[titan] 2026-10-31 06:03:39,857 - root - INFO - TPU memory usage for model: 0.04GiB(0.04%)
+[titan] 2026-10-31 06:03:39,864 - root - INFO - Optimizer AdamW (model_part=0): 1095 params [.*] {'fused': False, 'foreach': True, 'lr': 5e-05, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.1}
+W1031 06:03:39.875902 137734943283136 utils.py:322] Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+I1031 06:03:39.876026 137734943283136 trainer.py:621] Peak FLOPS used for computing MFU: 4.590e+14
+I1031 06:03:39.876278 137734943283136 trainer.py:623] TPU memory usage for model: 0.04GiB(0.04%)
+I1031 06:03:39.882897 137734943283136 optimizer.py:268] Optimizer AdamW (model_part=0): 1095 params [.*] {'fused': False, 'foreach': True, 'lr': 5e-05, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.1}
+[titan] 2026-10-31 06:03:39,896 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-10-31 06:03:39,896 - root - INFO - Trainer is initialized with 32768 tokens per DP rank, 1048576 tokens per train step, gradient accumulation steps 2, maximum context length 32768, total steps 10 (warmup 0)
+W1031 06:03:39.914070 140521376438208 utils.py:322] Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+I1031 06:03:39.914197 140521376438208 trainer.py:621] Peak FLOPS used for computing MFU: 4.590e+14
+I1031 06:03:39.914457 140521376438208 trainer.py:623] TPU memory usage for model: 0.04GiB(0.04%)
+W1031 06:03:39.914880 137734943283136 base.py:654] initial_load_model_only=True has no effect without an initial_load_path.
+I1031 06:03:39.915009 137734943283136 trainer.py:745] Trainer is initialized with 32768 tokens per DP rank, 1048576 tokens per train step, gradient accumulation steps 2, maximum context length 32768, total steps 10 (warmup 0)
+I1031 06:03:39.921251 140521376438208 optimizer.py:268] Optimizer AdamW (model_part=0): 1095 params [.*] {'fused': False, 'foreach': True, 'lr': 5e-05, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.1}
+W1031 06:03:39.954030 140521376438208 base.py:654] initial_load_model_only=True has no effect without an initial_load_path.
+I1031 06:03:39.954203 140521376438208 trainer.py:745] Trainer is initialized with 32768 tokens per DP rank, 1048576 tokens per train step, gradient accumulation steps 2, maximum context length 32768, total steps 10 (warmup 0)
+W1031 06:03:39.965807 140499180767168 utils.py:322] Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+I1031 06:03:39.965971 140499180767168 trainer.py:621] Peak FLOPS used for computing MFU: 4.590e+14
+I1031 06:03:39.966276 140499180767168 trainer.py:623] TPU memory usage for model: 0.04GiB(0.04%)
+I1031 06:03:39.973882 140499180767168 optimizer.py:268] Optimizer AdamW (model_part=0): 1095 params [.*] {'fused': False, 'foreach': True, 'lr': 5e-05, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.1}
+W1031 06:03:40.005157 140499180767168 base.py:654] initial_load_model_only=True has no effect without an initial_load_path.
+I1031 06:03:40.005296 140499180767168 trainer.py:745] Trainer is initialized with 32768 tokens per DP rank, 1048576 tokens per train step, gradient accumulation steps 2, maximum context length 32768, total steps 10 (warmup 0)
+[titan] 2026-10-31 06:03:40,994 - root - INFO - [Wan2.1-14B] Loaded 4/12 shards (377/1095 keys in 1.1s)
+I1031 06:03:41.339384 137734943283136 wan2_1_torchtitan.py:719] [Wan2.1-14B] Loaded 4/12 shards (377/1095 keys in 1.4s)
+[titan] 2026-10-31 06:03:42,116 - root - INFO - [Wan2.1-14B] Loaded 8/12 shards (755/1095 keys in 2.2s)
+I1031 06:03:42.133696 140499180767168 wan2_1_torchtitan.py:719] [Wan2.1-14B] Loaded 4/12 shards (377/1095 keys in 2.1s)
+I1031 06:03:42.137300 140521376438208 wan2_1_torchtitan.py:719] [Wan2.1-14B] Loaded 4/12 shards (377/1095 keys in 2.2s)
+I1031 06:03:42.924216 137734943283136 wan2_1_torchtitan.py:719] [Wan2.1-14B] Loaded 8/12 shards (755/1095 keys in 3.0s)
+[titan] 2026-10-31 06:03:43,232 - root - INFO - [Wan2.1-14B] Loaded 12/12 shards (1095/1095 keys in 3.3s)
+[titan] 2026-10-31 06:03:43,232 - root - INFO - Training starts at step 1
+/usr/local/lib/python3.14/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_state.py:362: UserWarning: FSDP2-wrapped module (FSDPWanConditionEmbedder) returned a view tensor. An in-place op on this view (e.g., `x += y`) will silently drop the pre-backward hook and skip the all-gather, which can cause backward to fail or produce wrong gradients. Use out-of-place ops (`out = out + y`, not `out += y`) or `.clone()` the output before any in-place op.
+  output = self._register_pre_backward_hook(output)
+I1031 06:03:44.245176 137734943283136 wan2_1_torchtitan.py:719] [Wan2.1-14B] Loaded 12/12 shards (1095/1095 keys in 4.3s)
+I1031 06:03:44.245574 137734943283136 trainer.py:1140] Training starts at step 1
+I1031 06:03:44.254160 140499180767168 wan2_1_torchtitan.py:719] [Wan2.1-14B] Loaded 8/12 shards (755/1095 keys in 4.2s)
+I1031 06:03:44.288988 140521376438208 wan2_1_torchtitan.py:719] [Wan2.1-14B] Loaded 8/12 shards (755/1095 keys in 4.3s)
+/usr/local/lib/python3.14/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_state.py:362: UserWarning: FSDP2-wrapped module (FSDPWanConditionEmbedder) returned a view tensor. An in-place op on this view (e.g., `x += y`) will silently drop the pre-backward hook and skip the all-gather, which can cause backward to fail or produce wrong gradients. Use out-of-place ops (`out = out + y`, not `out += y`) or `.clone()` the output before any in-place op.
+  output = self._register_pre_backward_hook(output)
+I1031 06:03:45.563497 140499180767168 wan2_1_torchtitan.py:719] [Wan2.1-14B] Loaded 12/12 shards (1095/1095 keys in 5.6s)
+I1031 06:03:45.563990 140499180767168 trainer.py:1140] Training starts at step 1
+I1031 06:03:45.586590 140521376438208 wan2_1_torchtitan.py:719] [Wan2.1-14B] Loaded 12/12 shards (1095/1095 keys in 5.6s)
+I1031 06:03:45.587018 140521376438208 trainer.py:1140] Training starts at step 1
+/usr/local/lib/python3.14/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_state.py:362: UserWarning: FSDP2-wrapped module (FSDPWanConditionEmbedder) returned a view tensor. An in-place op on this view (e.g., `x += y`) will silently drop the pre-backward hook and skip the all-gather, which can cause backward to fail or produce wrong gradients. Use out-of-place ops (`out = out + y`, not `out += y`) or `.clone()` the output before any in-place op.
+  output = self._register_pre_backward_hook(output)
+/usr/local/lib/python3.14/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_state.py:362: UserWarning: FSDP2-wrapped module (FSDPWanConditionEmbedder) returned a view tensor. An in-place op on this view (e.g., `x += y`) will silently drop the pre-backward hook and skip the all-gather, which can cause backward to fail or produce wrong gradients. Use out-of-place ops (`out = out + y`, not `out += y`) or `.clone()` the output before any in-place op.
+  output = self._register_pre_backward_hook(output)
+[titan] 2026-10-31 06:03:47,132 - absl - INFO - Split graph into 1 partitions
+I1031 06:03:48.130004 137734943283136 split_compiler.py:686] Split graph into 1 partitions
+[rank0]:W1031 06:03:48.212000 23994 site-packages/torch/_logging/_internal.py:1407] [0/1] 
+[rank0]:W1031 06:03:48.212000 23994 site-packages/torch/_logging/_internal.py:1407] [0/1] Detected that context_fn is passed to torch.utils.checkpoint under torch.compile.
+[rank0]:W1031 06:03:48.212000 23994 site-packages/torch/_logging/_internal.py:1407] [0/1] Please make sure the checkpointed region does not contain in-place ops (e.g. torch.relu_).
+[rank0]:W1031 06:03:48.212000 23994 site-packages/torch/_logging/_internal.py:1407] [0/1] 
+[rank1]:W1031 06:03:49.192000 23995 site-packages/torch/_logging/_internal.py:1407] [0/1] 
+[rank1]:W1031 06:03:49.192000 23995 site-packages/torch/_logging/_internal.py:1407] [0/1] Detected that context_fn is passed to torch.utils.checkpoint under torch.compile.
+[rank1]:W1031 06:03:49.192000 23995 site-packages/torch/_logging/_internal.py:1407] [0/1] Please make sure the checkpointed region does not contain in-place ops (e.g. torch.relu_).
+[rank1]:W1031 06:03:49.192000 23995 site-packages/torch/_logging/_internal.py:1407] [0/1] 
+I1031 06:03:49.458871 140521376438208 split_compiler.py:686] Split graph into 1 partitions
+I1031 06:03:49.491955 140499180767168 split_compiler.py:686] Split graph into 1 partitions
+[titan] 2026-10-31 06:03:49,736 - absl - INFO - Split graph into 1 partitions
+/torchtitan-native/wan2_1_torchtitan.py:539: UserWarning: The .grad attribute of a Tensor that is not a leaf Tensor is being accessed. Its .grad attribute won't be populated during autograd.backward(). If you indeed want the .grad field to be populated for a non-leaf Tensor, use .retain_grad() on the non-leaf Tensor. If you access the non-leaf Tensor by mistake, make sure you access the leaf Tensor instead. See github.com/pytorch/pytorch/pull/30531 for more information. (Triggered internally at external/rules_python++pip+torch_tpu_pypi_2_15_0_314_torch/site-packages/torch/include/ATen/core/TensorBody.h:494.)
+  shift, scale = (self.scale_shift_table.float() + temb.float().unsqueeze(1)).unbind(dim=1)
+/torchtitan-native/wan2_1_torchtitan.py:113: UserWarning: The .grad attribute of a Tensor that is not a leaf Tensor is being accessed. Its .grad attribute won't be populated during autograd.backward(). If you indeed want the .grad field to be populated for a non-leaf Tensor, use .retain_grad() on the non-leaf Tensor. If you access the non-leaf Tensor by mistake, make sure you access the leaf Tensor instead. See github.com/pytorch/pytorch/pull/30531 for more information. (Triggered internally at external/rules_python++pip+torch_tpu_pypi_2_15_0_314_torch/site-packages/torch/include/ATen/core/TensorBody.h:494.)
+  x.float(),
+/torchtitan-native/wan2_1_torchtitan.py:119: UserWarning: The .grad attribute of a Tensor that is not a leaf Tensor is being accessed. Its .grad attribute won't be populated during autograd.backward(). If you indeed want the .grad field to be populated for a non-leaf Tensor, use .retain_grad() on the non-leaf Tensor. If you access the non-leaf Tensor by mistake, make sure you access the leaf Tensor instead. See github.com/pytorch/pytorch/pull/30531 for more information. (Triggered internally at external/rules_python++pip+torch_tpu_pypi_2_15_0_314_torch/site-packages/torch/include/ATen/core/TensorBody.h:494.)
+  return out.to(x.dtype)
+/torchtitan-native/wan2_1_torchtitan.py:540: UserWarning: The .grad attribute of a Tensor that is not a leaf Tensor is being accessed. Its .grad attribute won't be populated during autograd.backward(). If you indeed want the .grad field to be populated for a non-leaf Tensor, use .retain_grad() on the non-leaf Tensor. If you access the non-leaf Tensor by mistake, make sure you access the leaf Tensor instead. See github.com/pytorch/pytorch/pull/30531 for more information. (Triggered internally at external/rules_python++pip+torch_tpu_pypi_2_15_0_314_torch/site-packages/torch/include/ATen/core/TensorBody.h:494.)
+  hidden_states = (self.norm_out(hidden_states).float() * (1.0 + scale.unsqueeze(1)) + shift.unsqueeze(1)).to(
+/torchtitan-native/wan2_1_torchtitan.py:543: UserWarning: The .grad attribute of a Tensor that is not a leaf Tensor is being accessed. Its .grad attribute won't be populated during autograd.backward(). If you indeed want the .grad field to be populated for a non-leaf Tensor, use .retain_grad() on the non-leaf Tensor. If you access the non-leaf Tensor by mistake, make sure you access the leaf Tensor instead. See github.com/pytorch/pytorch/pull/30531 for more information. (Triggered internally at external/rules_python++pip+torch_tpu_pypi_2_15_0_314_torch/site-packages/torch/include/ATen/core/TensorBody.h:494.)
+  return self.proj_out(hidden_states.to(self.proj_out.weight.dtype))
+/usr/local/lib/python3.14/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_common.py:188: UserWarning: The .grad attribute of a Tensor that is not a leaf Tensor is being accessed. Its .grad attribute won't be populated during autograd.backward(). If you indeed want the .grad field to be populated for a non-leaf Tensor, use .retain_grad() on the non-leaf Tensor. If you access the non-leaf Tensor by mistake, make sure you access the leaf Tensor instead. See github.com/pytorch/pytorch/pull/30531 for more information. (Triggered internally at external/rules_python++pip+torch_tpu_pypi_2_15_0_314_torch/site-packages/torch/include/ATen/core/TensorBody.h:494.)
+  return x.to(dtype)
+/torchtitan-native/wan2_1_torchtitan.py:898: UserWarning: The .grad attribute of a Tensor that is not a leaf Tensor is being accessed. Its .grad attribute won't be populated during autograd.backward(). If you indeed want the .grad field to be populated for a non-leaf Tensor, use .retain_grad() on the non-leaf Tensor. If you access the non-leaf Tensor by mistake, make sure you access the leaf Tensor instead. See github.com/pytorch/pytorch/pull/30531 for more information. (Triggered internally at external/rules_python++pip+torch_tpu_pypi_2_15_0_314_torch/site-packages/torch/include/ATen/core/TensorBody.h:494.)
+  loss = torch.nn.functional.mse_loss(pred.float(), target, reduction="mean") * loss_scale
+[rank3]:W1031 06:03:50.523000 23997 site-packages/torch/_logging/_internal.py:1407] [0/1] 
+[rank3]:W1031 06:03:50.523000 23997 site-packages/torch/_logging/_internal.py:1407] [0/1] Detected that context_fn is passed to torch.utils.checkpoint under torch.compile.
+[rank3]:W1031 06:03:50.523000 23997 site-packages/torch/_logging/_internal.py:1407] [0/1] Please make sure the checkpointed region does not contain in-place ops (e.g. torch.relu_).
+[rank3]:W1031 06:03:50.523000 23997 site-packages/torch/_logging/_internal.py:1407] [0/1] 
+[rank2]:W1031 06:03:50.575000 23996 site-packages/torch/_logging/_internal.py:1407] [0/1] 
+[rank2]:W1031 06:03:50.575000 23996 site-packages/torch/_logging/_internal.py:1407] [0/1] Detected that context_fn is passed to torch.utils.checkpoint under torch.compile.
+[rank2]:W1031 06:03:50.575000 23996 site-packages/torch/_logging/_internal.py:1407] [0/1] Please make sure the checkpointed region does not contain in-place ops (e.g. torch.relu_).
+[rank2]:W1031 06:03:50.575000 23996 site-packages/torch/_logging/_internal.py:1407] [0/1] 
+[titan] 2026-10-31 06:03:50,595 - absl - INFO - Split graph into 1 partitions
+I1031 06:03:50.707458 137734943283136 split_compiler.py:686] Split graph into 1 partitions
+/torchtitan-native/wan2_1_torchtitan.py:539: UserWarning: The .grad attribute of a Tensor that is not a leaf Tensor is being accessed. Its .grad attribute won't be populated during autograd.backward(). If you indeed want the .grad field to be populated for a non-leaf Tensor, use .retain_grad() on the non-leaf Tensor. If you access the non-leaf Tensor by mistake, make sure you access the leaf Tensor instead. See github.com/pytorch/pytorch/pull/30531 for more information. (Triggered internally at external/rules_python++pip+torch_tpu_pypi_2_15_0_314_torch/site-packages/torch/include/ATen/core/TensorBody.h:494.)
+  shift, scale = (self.scale_shift_table.float() + temb.float().unsqueeze(1)).unbind(dim=1)
+/torchtitan-native/wan2_1_torchtitan.py:113: UserWarning: The .grad attribute of a Tensor that is not a leaf Tensor is being accessed. Its .grad attribute won't be populated during autograd.backward(). If you indeed want the .grad field to be populated for a non-leaf Tensor, use .retain_grad() on the non-leaf Tensor. If you access the non-leaf Tensor by mistake, make sure you access the leaf Tensor instead. See github.com/pytorch/pytorch/pull/30531 for more information. (Triggered internally at external/rules_python++pip+torch_tpu_pypi_2_15_0_314_torch/site-packages/torch/include/ATen/core/TensorBody.h:494.)
+  x.float(),
+/torchtitan-native/wan2_1_torchtitan.py:119: UserWarning: The .grad attribute of a Tensor that is not a leaf Tensor is being accessed. Its .grad attribute won't be populated during autograd.backward(). If you indeed want the .grad field to be populated for a non-leaf Tensor, use .retain_grad() on the non-leaf Tensor. If you access the non-leaf Tensor by mistake, make sure you access the leaf Tensor instead. See github.com/pytorch/pytorch/pull/30531 for more information. (Triggered internally at external/rules_python++pip+torch_tpu_pypi_2_15_0_314_torch/site-packages/torch/include/ATen/core/TensorBody.h:494.)
+  return out.to(x.dtype)
+/torchtitan-native/wan2_1_torchtitan.py:540: UserWarning: The .grad attribute of a Tensor that is not a leaf Tensor is being accessed. Its .grad attribute won't be populated during autograd.backward(). If you indeed want the .grad field to be populated for a non-leaf Tensor, use .retain_grad() on the non-leaf Tensor. If you access the non-leaf Tensor by mistake, make sure you access the leaf Tensor instead. See github.com/pytorch/pytorch/pull/30531 for more information. (Triggered internally at external/rules_python++pip+torch_tpu_pypi_2_15_0_314_torch/site-packages/torch/include/ATen/core/TensorBody.h:494.)
+  hidden_states = (self.norm_out(hidden_states).float() * (1.0 + scale.unsqueeze(1)) + shift.unsqueeze(1)).to(
+/torchtitan-native/wan2_1_torchtitan.py:543: UserWarning: The .grad attribute of a Tensor that is not a leaf Tensor is being accessed. Its .grad attribute won't be populated during autograd.backward(). If you indeed want the .grad field to be populated for a non-leaf Tensor, use .retain_grad() on the non-leaf Tensor. If you access the non-leaf Tensor by mistake, make sure you access the leaf Tensor instead. See github.com/pytorch/pytorch/pull/30531 for more information. (Triggered internally at external/rules_python++pip+torch_tpu_pypi_2_15_0_314_torch/site-packages/torch/include/ATen/core/TensorBody.h:494.)
+  return self.proj_out(hidden_states.to(self.proj_out.weight.dtype))
+/usr/local/lib/python3.14/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_common.py:188: UserWarning: The .grad attribute of a Tensor that is not a leaf Tensor is being accessed. Its .grad attribute won't be populated during autograd.backward(). If you indeed want the .grad field to be populated for a non-leaf Tensor, use .retain_grad() on the non-leaf Tensor. If you access the non-leaf Tensor by mistake, make sure you access the leaf Tensor instead. See github.com/pytorch/pytorch/pull/30531 for more information. (Triggered internally at external/rules_python++pip+torch_tpu_pypi_2_15_0_314_torch/site-packages/torch/include/ATen/core/TensorBody.h:494.)
+  return x.to(dtype)
+/torchtitan-native/wan2_1_torchtitan.py:898: UserWarning: The .grad attribute of a Tensor that is not a leaf Tensor is being accessed. Its .grad attribute won't be populated during autograd.backward(). If you indeed want the .grad field to be populated for a non-leaf Tensor, use .retain_grad() on the non-leaf Tensor. If you access the non-leaf Tensor by mistake, make sure you access the leaf Tensor instead. See github.com/pytorch/pytorch/pull/30531 for more information. (Triggered internally at external/rules_python++pip+torch_tpu_pypi_2_15_0_314_torch/site-packages/torch/include/ATen/core/TensorBody.h:494.)
+  loss = torch.nn.functional.mse_loss(pred.float(), target, reduction="mean") * loss_scale
+I1031 06:03:51.560698 137734943283136 split_compiler.py:686] Split graph into 1 partitions
+[titan] 2026-10-31 06:03:51,787 - absl - INFO - Split graph into 1 partitions
+I1031 06:03:52.067778 140521376438208 split_compiler.py:686] Split graph into 1 partitions
+I1031 06:03:52.133829 140499180767168 split_compiler.py:686] Split graph into 1 partitions
+/torchtitan-native/wan2_1_torchtitan.py:539: UserWarning: The .grad attribute of a Tensor that is not a leaf Tensor is being accessed. Its .grad attribute won't be populated during autograd.backward(). If you indeed want the .grad field to be populated for a non-leaf Tensor, use .retain_grad() on the non-leaf Tensor. If you access the non-leaf Tensor by mistake, make sure you access the leaf Tensor instead. See github.com/pytorch/pytorch/pull/30531 for more information. (Triggered internally at external/rules_python++pip+torch_tpu_pypi_2_15_0_314_torch/site-packages/torch/include/ATen/core/TensorBody.h:494.)
+  shift, scale = (self.scale_shift_table.float() + temb.float().unsqueeze(1)).unbind(dim=1)
+/torchtitan-native/wan2_1_torchtitan.py:113: UserWarning: The .grad attribute of a Tensor that is not a leaf Tensor is being accessed. Its .grad attribute won't be populated during autograd.backward(). If you indeed want the .grad field to be populated for a non-leaf Tensor, use .retain_grad() on the non-leaf Tensor. If you access the non-leaf Tensor by mistake, make sure you access the leaf Tensor instead. See github.com/pytorch/pytorch/pull/30531 for more information. (Triggered internally at external/rules_python++pip+torch_tpu_pypi_2_15_0_314_torch/site-packages/torch/include/ATen/core/TensorBody.h:494.)
+  x.float(),
+/torchtitan-native/wan2_1_torchtitan.py:119: UserWarning: The .grad attribute of a Tensor that is not a leaf Tensor is being accessed. Its .grad attribute won't be populated during autograd.backward(). If you indeed want the .grad field to be populated for a non-leaf Tensor, use .retain_grad() on the non-leaf Tensor. If you access the non-leaf Tensor by mistake, make sure you access the leaf Tensor instead. See github.com/pytorch/pytorch/pull/30531 for more information. (Triggered internally at external/rules_python++pip+torch_tpu_pypi_2_15_0_314_torch/site-packages/torch/include/ATen/core/TensorBody.h:494.)
+  return out.to(x.dtype)
+/torchtitan-native/wan2_1_torchtitan.py:540: UserWarning: The .grad attribute of a Tensor that is not a leaf Tensor is being accessed. Its .grad attribute won't be populated during autograd.backward(). If you indeed want the .grad field to be populated for a non-leaf Tensor, use .retain_grad() on the non-leaf Tensor. If you access the non-leaf Tensor by mistake, make sure you access the leaf Tensor instead. See github.com/pytorch/pytorch/pull/30531 for more information. (Triggered internally at external/rules_python++pip+torch_tpu_pypi_2_15_0_314_torch/site-packages/torch/include/ATen/core/TensorBody.h:494.)
+  hidden_states = (self.norm_out(hidden_states).float() * (1.0 + scale.unsqueeze(1)) + shift.unsqueeze(1)).to(
+/torchtitan-native/wan2_1_torchtitan.py:543: UserWarning: The .grad attribute of a Tensor that is not a leaf Tensor is being accessed. Its .grad attribute won't be populated during autograd.backward(). If you indeed want the .grad field to be populated for a non-leaf Tensor, use .retain_grad() on the non-leaf Tensor. If you access the non-leaf Tensor by mistake, make sure you access the leaf Tensor instead. See github.com/pytorch/pytorch/pull/30531 for more information. (Triggered internally at external/rules_python++pip+torch_tpu_pypi_2_15_0_314_torch/site-packages/torch/include/ATen/core/TensorBody.h:494.)
+  return self.proj_out(hidden_states.to(self.proj_out.weight.dtype))
+/usr/local/lib/python3.14/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_common.py:188: UserWarning: The .grad attribute of a Tensor that is not a leaf Tensor is being accessed. Its .grad attribute won't be populated during autograd.backward(). If you indeed want the .grad field to be populated for a non-leaf Tensor, use .retain_grad() on the non-leaf Tensor. If you access the non-leaf Tensor by mistake, make sure you access the leaf Tensor instead. See github.com/pytorch/pytorch/pull/30531 for more information. (Triggered internally at external/rules_python++pip+torch_tpu_pypi_2_15_0_314_torch/site-packages/torch/include/ATen/core/TensorBody.h:494.)
+  return x.to(dtype)
+/torchtitan-native/wan2_1_torchtitan.py:898: UserWarning: The .grad attribute of a Tensor that is not a leaf Tensor is being accessed. Its .grad attribute won't be populated during autograd.backward(). If you indeed want the .grad field to be populated for a non-leaf Tensor, use .retain_grad() on the non-leaf Tensor. If you access the non-leaf Tensor by mistake, make sure you access the leaf Tensor instead. See github.com/pytorch/pytorch/pull/30531 for more information. (Triggered internally at external/rules_python++pip+torch_tpu_pypi_2_15_0_314_torch/site-packages/torch/include/ATen/core/TensorBody.h:494.)
+  loss = torch.nn.functional.mse_loss(pred.float(), target, reduction="mean") * loss_scale
+/torchtitan-native/wan2_1_torchtitan.py:539: UserWarning: The .grad attribute of a Tensor that is not a leaf Tensor is being accessed. Its .grad attribute won't be populated during autograd.backward(). If you indeed want the .grad field to be populated for a non-leaf Tensor, use .retain_grad() on the non-leaf Tensor. If you access the non-leaf Tensor by mistake, make sure you access the leaf Tensor instead. See github.com/pytorch/pytorch/pull/30531 for more information. (Triggered internally at external/rules_python++pip+torch_tpu_pypi_2_15_0_314_torch/site-packages/torch/include/ATen/core/TensorBody.h:494.)
+  shift, scale = (self.scale_shift_table.float() + temb.float().unsqueeze(1)).unbind(dim=1)
+/torchtitan-native/wan2_1_torchtitan.py:113: UserWarning: The .grad attribute of a Tensor that is not a leaf Tensor is being accessed. Its .grad attribute won't be populated during autograd.backward(). If you indeed want the .grad field to be populated for a non-leaf Tensor, use .retain_grad() on the non-leaf Tensor. If you access the non-leaf Tensor by mistake, make sure you access the leaf Tensor instead. See github.com/pytorch/pytorch/pull/30531 for more information. (Triggered internally at external/rules_python++pip+torch_tpu_pypi_2_15_0_314_torch/site-packages/torch/include/ATen/core/TensorBody.h:494.)
+  x.float(),
+/torchtitan-native/wan2_1_torchtitan.py:119: UserWarning: The .grad attribute of a Tensor that is not a leaf Tensor is being accessed. Its .grad attribute won't be populated during autograd.backward(). If you indeed want the .grad field to be populated for a non-leaf Tensor, use .retain_grad() on the non-leaf Tensor. If you access the non-leaf Tensor by mistake, make sure you access the leaf Tensor instead. See github.com/pytorch/pytorch/pull/30531 for more information. (Triggered internally at external/rules_python++pip+torch_tpu_pypi_2_15_0_314_torch/site-packages/torch/include/ATen/core/TensorBody.h:494.)
+  return out.to(x.dtype)
+/torchtitan-native/wan2_1_torchtitan.py:540: UserWarning: The .grad attribute of a Tensor that is not a leaf Tensor is being accessed. Its .grad attribute won't be populated during autograd.backward(). If you indeed want the .grad field to be populated for a non-leaf Tensor, use .retain_grad() on the non-leaf Tensor. If you access the non-leaf Tensor by mistake, make sure you access the leaf Tensor instead. See github.com/pytorch/pytorch/pull/30531 for more information. (Triggered internally at external/rules_python++pip+torch_tpu_pypi_2_15_0_314_torch/site-packages/torch/include/ATen/core/TensorBody.h:494.)
+  hidden_states = (self.norm_out(hidden_states).float() * (1.0 + scale.unsqueeze(1)) + shift.unsqueeze(1)).to(
+/torchtitan-native/wan2_1_torchtitan.py:543: UserWarning: The .grad attribute of a Tensor that is not a leaf Tensor is being accessed. Its .grad attribute won't be populated during autograd.backward(). If you indeed want the .grad field to be populated for a non-leaf Tensor, use .retain_grad() on the non-leaf Tensor. If you access the non-leaf Tensor by mistake, make sure you access the leaf Tensor instead. See github.com/pytorch/pytorch/pull/30531 for more information. (Triggered internally at external/rules_python++pip+torch_tpu_pypi_2_15_0_314_torch/site-packages/torch/include/ATen/core/TensorBody.h:494.)
+  return self.proj_out(hidden_states.to(self.proj_out.weight.dtype))
+/usr/local/lib/python3.14/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_common.py:188: UserWarning: The .grad attribute of a Tensor that is not a leaf Tensor is being accessed. Its .grad attribute won't be populated during autograd.backward(). If you indeed want the .grad field to be populated for a non-leaf Tensor, use .retain_grad() on the non-leaf Tensor. If you access the non-leaf Tensor by mistake, make sure you access the leaf Tensor instead. See github.com/pytorch/pytorch/pull/30531 for more information. (Triggered internally at external/rules_python++pip+torch_tpu_pypi_2_15_0_314_torch/site-packages/torch/include/ATen/core/TensorBody.h:494.)
+  return x.to(dtype)
+I1031 06:03:52.744439 137734943283136 split_compiler.py:686] Split graph into 1 partitions
+/torchtitan-native/wan2_1_torchtitan.py:898: UserWarning: The .grad attribute of a Tensor that is not a leaf Tensor is being accessed. Its .grad attribute won't be populated during autograd.backward(). If you indeed want the .grad field to be populated for a non-leaf Tensor, use .retain_grad() on the non-leaf Tensor. If you access the non-leaf Tensor by mistake, make sure you access the leaf Tensor instead. See github.com/pytorch/pytorch/pull/30531 for more information. (Triggered internally at external/rules_python++pip+torch_tpu_pypi_2_15_0_314_torch/site-packages/torch/include/ATen/core/TensorBody.h:494.)
+  loss = torch.nn.functional.mse_loss(pred.float(), target, reduction="mean") * loss_scale
+I1031 06:03:52.904954 140521376438208 split_compiler.py:686] Split graph into 1 partitions
+I1031 06:03:52.971031 140499180767168 split_compiler.py:686] Split graph into 1 partitions
+I1031 06:03:54.052757 140521376438208 split_compiler.py:686] Split graph into 1 partitions
+I1031 06:03:54.140455 140499180767168 split_compiler.py:686] Split graph into 1 partitions
+/usr/local/lib/python3.14/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_state.py:362: UserWarning: FSDP2-wrapped module (FSDPWanConditionEmbedder) returned a view tensor. An in-place op on this view (e.g., `x += y`) will silently drop the pre-backward hook and skip the all-gather, which can cause backward to fail or produce wrong gradients. Use out-of-place ops (`out = out + y`, not `out += y`) or `.clone()` the output before any in-place op.
+  output = self._register_pre_backward_hook(output)
+/usr/local/lib/python3.14/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_state.py:362: UserWarning: FSDP2-wrapped module (FSDPWanConditionEmbedder) returned a view tensor. An in-place op on this view (e.g., `x += y`) will silently drop the pre-backward hook and skip the all-gather, which can cause backward to fail or produce wrong gradients. Use out-of-place ops (`out = out + y`, not `out += y`) or `.clone()` the output before any in-place op.
+  output = self._register_pre_backward_hook(output)
+/usr/local/lib/python3.14/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_state.py:362: UserWarning: FSDP2-wrapped module (FSDPWanConditionEmbedder) returned a view tensor. An in-place op on this view (e.g., `x += y`) will silently drop the pre-backward hook and skip the all-gather, which can cause backward to fail or produce wrong gradients. Use out-of-place ops (`out = out + y`, not `out += y`) or `.clone()` the output before any in-place op.
+  output = self._register_pre_backward_hook(output)
+/usr/local/lib/python3.14/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_state.py:362: UserWarning: FSDP2-wrapped module (FSDPWanConditionEmbedder) returned a view tensor. An in-place op on this view (e.g., `x += y`) will silently drop the pre-backward hook and skip the all-gather, which can cause backward to fail or produce wrong gradients. Use out-of-place ops (`out = out + y`, not `out += y`) or `.clone()` the output before any in-place op.
+  output = self._register_pre_backward_hook(output)
+I1031 06:05:09.402383 140521376438208 metrics.py:540] [31mstep:  1  [32mloss:  2.07015  [38;2;180;60;0mgrad_norm: 67.3148  [38;2;54;234;195mmemory: 21.51GiB(22.64%)  [34mtps: 722  [36mtflops: 120.87  [35mmfu: 26.33%  [33mtime_end_to_end: 90.83s[39m
+I1031 06:05:09.402485 137734943283136 metrics.py:540] [31mstep:  1  [32mloss:  2.07015  [38;2;180;60;0mgrad_norm: 67.3148  [38;2;54;234;195mmemory: 21.51GiB(22.64%)  [34mtps: 722  [36mtflops: 120.87  [35mmfu: 26.33%  [33mtime_end_to_end: 90.83s[39m
+I1031 06:05:09.402603 140499180767168 metrics.py:540] [31mstep:  1  [32mloss:  2.07015  [38;2;180;60;0mgrad_norm: 67.3148  [38;2;54;234;195mmemory: 21.51GiB(22.64%)  [34mtps: 722  [36mtflops: 120.88  [35mmfu: 26.34%  [33mtime_end_to_end: 90.82s[39m
+[titan] 2026-10-31 06:05:09,402 - root - INFO - [31mstep:  1  [32mloss:  2.07015  [38;2;180;60;0mgrad_norm: 67.3148  [38;2;54;234;195mmemory: 21.51GiB(22.64%)  [34mtps: 722  [36mtflops: 120.87  [35mmfu: 26.33%  [33mtime_end_to_end: 90.83s[39m
+I1031 06:06:02.753582 137734943283136 metrics.py:540] [31mstep:  2  [32mloss:  3.53201  [38;2;180;60;0mgrad_norm: 247.6661  [38;2;54;234;195mmemory: 21.51GiB(22.64%)  [34mtps: 1,228  [36mtflops: 205.78  [35mmfu: 44.83%  [33mtime_end_to_end: 53.35s[39m
+I1031 06:06:02.753661 140499180767168 metrics.py:540] [31mstep:  2  [32mloss:  3.53201  [38;2;180;60;0mgrad_norm: 247.6661  [38;2;54;234;195mmemory: 21.51GiB(22.64%)  [34mtps: 1,228  [36mtflops: 205.78  [35mmfu: 44.83%  [33mtime_end_to_end: 53.35s[39m
+[titan] 2026-10-31 06:06:02,753 - root - INFO - [31mstep:  2  [32mloss:  3.53201  [38;2;180;60;0mgrad_norm: 247.6661  [38;2;54;234;195mmemory: 21.51GiB(22.64%)  [34mtps: 1,228  [36mtflops: 205.78  [35mmfu: 44.83%  [33mtime_end_to_end: 53.35s[39m
+I1031 06:06:02.753700 140521376438208 metrics.py:540] [31mstep:  2  [32mloss:  3.53201  [38;2;180;60;0mgrad_norm: 247.6661  [38;2;54;234;195mmemory: 21.51GiB(22.64%)  [34mtps: 1,228  [36mtflops: 205.78  [35mmfu: 44.83%  [33mtime_end_to_end: 53.35s[39m
+I1031 06:06:56.132439 137734943283136 metrics.py:540] [31mstep:  3  [32mloss:  2.36889  [38;2;180;60;0mgrad_norm: 62.8624  [38;2;54;234;195mmemory: 21.51GiB(22.64%)  [34mtps: 1,228  [36mtflops: 205.68  [35mmfu: 44.81%  [33mtime_end_to_end: 53.38s[39m
+I1031 06:06:56.132584 140521376438208 metrics.py:540] [31mstep:  3  [32mloss:  2.36889  [38;2;180;60;0mgrad_norm: 62.8624  [38;2;54;234;195mmemory: 21.51GiB(22.64%)  [34mtps: 1,228  [36mtflops: 205.68  [35mmfu: 44.81%  [33mtime_end_to_end: 53.38s[39m
+I1031 06:06:56.132588 140499180767168 metrics.py:540] [31mstep:  3  [32mloss:  2.36889  [38;2;180;60;0mgrad_norm: 62.8624  [38;2;54;234;195mmemory: 21.51GiB(22.64%)  [34mtps: 1,228  [36mtflops: 205.68  [35mmfu: 44.81%  [33mtime_end_to_end: 53.38s[39m
+[titan] 2026-10-31 06:06:56,132 - root - INFO - [31mstep:  3  [32mloss:  2.36889  [38;2;180;60;0mgrad_norm: 62.8624  [38;2;54;234;195mmemory: 21.51GiB(22.64%)  [34mtps: 1,228  [36mtflops: 205.68  [35mmfu: 44.81%  [33mtime_end_to_end: 53.38s[39m
+I1031 06:07:49.525748 137734943283136 metrics.py:540] [31mstep:  4  [32mloss:  2.05303  [38;2;180;60;0mgrad_norm: 22.2230  [38;2;54;234;195mmemory: 21.51GiB(22.64%)  [34mtps: 1,227  [36mtflops: 205.62  [35mmfu: 44.80%  [33mtime_end_to_end: 53.39s[39m
+I1031 06:07:49.525807 140521376438208 metrics.py:540] [31mstep:  4  [32mloss:  2.05303  [38;2;180;60;0mgrad_norm: 22.2230  [38;2;54;234;195mmemory: 21.51GiB(22.64%)  [34mtps: 1,227  [36mtflops: 205.62  [35mmfu: 44.80%  [33mtime_end_to_end: 53.39s[39m
+I1031 06:07:49.526008 140499180767168 metrics.py:540] [31mstep:  4  [32mloss:  2.05303  [38;2;180;60;0mgrad_norm: 22.2230  [38;2;54;234;195mmemory: 21.51GiB(22.64%)  [34mtps: 1,227  [36mtflops: 205.62  [35mmfu: 44.80%  [33mtime_end_to_end: 53.39s[39m
+[titan] 2026-10-31 06:07:49,526 - root - INFO - [31mstep:  4  [32mloss:  2.05303  [38;2;180;60;0mgrad_norm: 22.2230  [38;2;54;234;195mmemory: 21.51GiB(22.64%)  [34mtps: 1,227  [36mtflops: 205.62  [35mmfu: 44.80%  [33mtime_end_to_end: 53.39s[39m
+I1031 06:08:42.833122 137734943283136 metrics.py:540] [31mstep:  5  [32mloss:  2.00124  [38;2;180;60;0mgrad_norm:  8.7106  [38;2;54;234;195mmemory: 21.51GiB(22.64%)  [34mtps: 1,229  [36mtflops: 205.95  [35mmfu: 44.87%  [33mtime_end_to_end: 53.31s[39m
+I1031 06:08:42.833162 140521376438208 metrics.py:540] [31mstep:  5  [32mloss:  2.00124  [38;2;180;60;0mgrad_norm:  8.7106  [38;2;54;234;195mmemory: 21.51GiB(22.64%)  [34mtps: 1,229  [36mtflops: 205.95  [35mmfu: 44.87%  [33mtime_end_to_end: 53.31s[39m
+[titan] 2026-10-31 06:08:42,833 - root - INFO - [31mstep:  5  [32mloss:  2.00124  [38;2;180;60;0mgrad_norm:  8.7106  [38;2;54;234;195mmemory: 21.51GiB(22.64%)  [34mtps: 1,229  [36mtflops: 205.95  [35mmfu: 44.87%  [33mtime_end_to_end: 53.31s[39m
+I1031 06:08:42.833329 140499180767168 metrics.py:540] [31mstep:  5  [32mloss:  2.00124  [38;2;180;60;0mgrad_norm:  8.7106  [38;2;54;234;195mmemory: 21.51GiB(22.64%)  [34mtps: 1,229  [36mtflops: 205.95  [35mmfu: 44.87%  [33mtime_end_to_end: 53.31s[39m
+I1031 06:09:36.155958 137734943283136 metrics.py:540] [31mstep:  6  [32mloss:  2.02242  [38;2;180;60;0mgrad_norm: 16.3533  [38;2;54;234;195mmemory: 21.51GiB(22.64%)  [34mtps: 1,229  [36mtflops: 205.89  [35mmfu: 44.86%  [33mtime_end_to_end: 53.32s[39m
+I1031 06:09:36.156248 140521376438208 metrics.py:540] [31mstep:  6  [32mloss:  2.02242  [38;2;180;60;0mgrad_norm: 16.3533  [38;2;54;234;195mmemory: 21.51GiB(22.64%)  [34mtps: 1,229  [36mtflops: 205.89  [35mmfu: 44.86%  [33mtime_end_to_end: 53.32s[39m
+I1031 06:09:36.156259 140499180767168 metrics.py:540] [31mstep:  6  [32mloss:  2.02242  [38;2;180;60;0mgrad_norm: 16.3533  [38;2;54;234;195mmemory: 21.51GiB(22.64%)  [34mtps: 1,229  [36mtflops: 205.89  [35mmfu: 44.86%  [33mtime_end_to_end: 53.32s[39m
+[titan] 2026-10-31 06:09:36,156 - root - INFO - [31mstep:  6  [32mloss:  2.02242  [38;2;180;60;0mgrad_norm: 16.3533  [38;2;54;234;195mmemory: 21.51GiB(22.64%)  [34mtps: 1,229  [36mtflops: 205.89  [35mmfu: 44.86%  [33mtime_end_to_end: 53.32s[39m
+I1031 06:10:29.476514 137734943283136 metrics.py:540] [31mstep:  7  [32mloss:  2.02107  [38;2;180;60;0mgrad_norm: 16.6186  [38;2;54;234;195mmemory: 21.51GiB(22.64%)  [34mtps: 1,229  [36mtflops: 205.90  [35mmfu: 44.86%  [33mtime_end_to_end: 53.32s[39m
+I1031 06:10:29.476557 140521376438208 metrics.py:540] [31mstep:  7  [32mloss:  2.02107  [38;2;180;60;0mgrad_norm: 16.6186  [38;2;54;234;195mmemory: 21.51GiB(22.64%)  [34mtps: 1,229  [36mtflops: 205.90  [35mmfu: 44.86%  [33mtime_end_to_end: 53.32s[39m
+I1031 06:10:29.476755 140499180767168 metrics.py:540] [31mstep:  7  [32mloss:  2.02107  [38;2;180;60;0mgrad_norm: 16.6186  [38;2;54;234;195mmemory: 21.51GiB(22.64%)  [34mtps: 1,229  [36mtflops: 205.90  [35mmfu: 44.86%  [33mtime_end_to_end: 53.32s[39m
+[titan] 2026-10-31 06:10:29,476 - root - INFO - [31mstep:  7  [32mloss:  2.02107  [38;2;180;60;0mgrad_norm: 16.6186  [38;2;54;234;195mmemory: 21.51GiB(22.64%)  [34mtps: 1,229  [36mtflops: 205.90  [35mmfu: 44.86%  [33mtime_end_to_end: 53.32s[39m
+I1031 06:11:22.779762 137734943283136 metrics.py:540] [31mstep:  8  [32mloss:  2.01041  [38;2;180;60;0mgrad_norm: 12.3360  [38;2;54;234;195mmemory: 21.51GiB(22.64%)  [34mtps: 1,230  [36mtflops: 205.97  [35mmfu: 44.87%  [33mtime_end_to_end: 53.30s[39m
+I1031 06:11:22.779855 140521376438208 metrics.py:540] [31mstep:  8  [32mloss:  2.01041  [38;2;180;60;0mgrad_norm: 12.3360  [38;2;54;234;195mmemory: 21.51GiB(22.64%)  [34mtps: 1,230  [36mtflops: 205.97  [35mmfu: 44.87%  [33mtime_end_to_end: 53.30s[39m
+[titan] 2026-10-31 06:11:22,779 - root - INFO - [31mstep:  8  [32mloss:  2.01041  [38;2;180;60;0mgrad_norm: 12.3360  [38;2;54;234;195mmemory: 21.51GiB(22.64%)  [34mtps: 1,230  [36mtflops: 205.97  [35mmfu: 44.87%  [33mtime_end_to_end: 53.30s[39m
+I1031 06:11:22.779903 140499180767168 metrics.py:540] [31mstep:  8  [32mloss:  2.01041  [38;2;180;60;0mgrad_norm: 12.3360  [38;2;54;234;195mmemory: 21.51GiB(22.64%)  [34mtps: 1,230  [36mtflops: 205.97  [35mmfu: 44.87%  [33mtime_end_to_end: 53.30s[39m
+I1031 06:12:16.177841 137734943283136 metrics.py:540] [31mstep:  9  [32mloss:  1.99988  [38;2;180;60;0mgrad_norm:  6.1404  [38;2;54;234;195mmemory: 21.51GiB(22.64%)  [34mtps: 1,227  [36mtflops: 205.60  [35mmfu: 44.79%  [33mtime_end_to_end: 53.40s[39m
+I1031 06:12:16.177936 140521376438208 metrics.py:540] [31mstep:  9  [32mloss:  1.99988  [38;2;180;60;0mgrad_norm:  6.1404  [38;2;54;234;195mmemory: 21.51GiB(22.64%)  [34mtps: 1,227  [36mtflops: 205.60  [35mmfu: 44.79%  [33mtime_end_to_end: 53.40s[39m
+I1031 06:12:16.178031 140499180767168 metrics.py:540] [31mstep:  9  [32mloss:  1.99988  [38;2;180;60;0mgrad_norm:  6.1404  [38;2;54;234;195mmemory: 21.51GiB(22.64%)  [34mtps: 1,227  [36mtflops: 205.60  [35mmfu: 44.79%  [33mtime_end_to_end: 53.40s[39m
+[titan] 2026-10-31 06:12:16,178 - root - INFO - [31mstep:  9  [32mloss:  1.99988  [38;2;180;60;0mgrad_norm:  6.1404  [38;2;54;234;195mmemory: 21.51GiB(22.64%)  [34mtps: 1,227  [36mtflops: 205.60  [35mmfu: 44.79%  [33mtime_end_to_end: 53.40s[39m
+I1031 06:13:09.552431 137734943283136 metrics.py:540] [31mstep: 10  [32mloss:  1.99387  [38;2;180;60;0mgrad_norm:  2.7620  [38;2;54;234;195mmemory: 21.51GiB(22.64%)  [34mtps: 1,228  [36mtflops: 205.69  [35mmfu: 44.81%  [33mtime_end_to_end: 53.37s[39m
+I1031 06:13:09.552477 140521376438208 metrics.py:540] [31mstep: 10  [32mloss:  1.99387  [38;2;180;60;0mgrad_norm:  2.7620  [38;2;54;234;195mmemory: 21.51GiB(22.64%)  [34mtps: 1,228  [36mtflops: 205.69  [35mmfu: 44.81%  [33mtime_end_to_end: 53.37s[39m
+I1031 06:13:09.552690 140499180767168 metrics.py:540] [31mstep: 10  [32mloss:  1.99387  [38;2;180;60;0mgrad_norm:  2.7620  [38;2;54;234;195mmemory: 21.51GiB(22.64%)  [34mtps: 1,228  [36mtflops: 205.69  [35mmfu: 44.81%  [33mtime_end_to_end: 53.37s[39m
+[titan] 2026-10-31 06:13:09,552 - root - INFO - [31mstep: 10  [32mloss:  1.99387  [38;2;180;60;0mgrad_norm:  2.7620  [38;2;54;234;195mmemory: 21.51GiB(22.64%)  [34mtps: 1,228  [36mtflops: 205.69  [35mmfu: 44.81%  [33mtime_end_to_end: 53.37s[39m
+I1031 06:13:09.553239 137734943283136 trainer.py:1194] Training completed
+I1031 06:13:09.553276 140521376438208 trainer.py:1194] Training completed
+I1031 06:13:09.553565 140499180767168 trainer.py:1194] Training completed
+[titan] 2026-10-31 06:13:09,553 - root - INFO - Sleeping 2 seconds for other ranks to complete
+[titan] 2026-10-31 06:13:11,553 - root - INFO - Training completed
+/usr/local/lib/python3.14/site-packages/torch/distributed/c10d_logger.py:83: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  return func(*args, **kwargs)
+I0000 00:00:1793427192.793709   23997 compilation_cache.cc:356] Compilation cache evicted.
+I0000 00:00:1793427192.793767   23997 compilation_cache.cc:203] CompilationCache final stats: num_cache_reqs=19693
+num_cache_hits=19516 {99.1%}
+num_compilations=2
+peak_compilation_memory_bytes=unknown
+
+I0000 00:00:1793427192.816591   23994 compilation_cache.cc:356] Compilation cache evicted.
+I0000 00:00:1793427192.816617   23994 compilation_cache.cc:203] CompilationCache final stats: num_cache_reqs=18882
+num_cache_hits=18729 {99.1%}
+num_compilations=4
+peak_compilation_memory_bytes=unknown
+
+I0000 00:00:1793427192.841071   23995 compilation_cache.cc:356] Compilation cache evicted.
+I0000 00:00:1793427192.841142   23995 compilation_cache.cc:203] CompilationCache final stats: num_cache_reqs=19693
+num_cache_hits=19516 {99.1%}
+num_compilations=0
+peak_compilation_memory_bytes=unknown
+
+I0000 00:00:1793427192.850645   23996 compilation_cache.cc:356] Compilation cache evicted.
+I0000 00:00:1793427192.850667   23996 compilation_cache.cc:203] CompilationCache final stats: num_cache_reqs=19693
+num_cache_hits=19515 {99.0%}
+num_compilations=2
+peak_compilation_memory_bytes=unknown
+
